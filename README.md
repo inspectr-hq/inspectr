@@ -19,7 +19,7 @@
 
 Request Inspector can be used in different ways, depending on your use case:
 
-## Request capturing
+## 🔌 Request capturing
 
 ### 🔹 Express Middleware
 Integrate **Request Inspector** as middleware in an **Express.js** application to log and analyze incoming API requests and webhook events. Ideal for adding inspection capabilities to existing Express Node.js applications.
@@ -27,12 +27,12 @@ Integrate **Request Inspector** as middleware in an **Express.js** application t
 ### 🔹 Proxy Inspector
 Deploy **Request Inspector** as an HTTP proxy to intercept requests and responses between a client and a backend service. Useful for debugging API calls without modifying your application.
 
-## Request inspections
+## 🔍 Request inspections
 
 ### 🔹 Standalone App
-Run **Request Inspector** as an independent app that can be hosted:
-- **Locally** – Run as a self-hosted debugging tool on your machine.
-- **VercelJS** – Deploy in the cloud for an accessible, hosted solution.
+Run **Request Inspector** as an independent application that can be deployed in various environments:
+- **Localhost** – Self-hosted for debugging API requests or webhook events directly on your machine.
+- **VercelJS** – Cloud-hosted for easy access and seamless integration.
 
 ## 📖 Examples
 
