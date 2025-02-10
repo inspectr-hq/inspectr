@@ -25,7 +25,7 @@ Request Inspector can be used in different ways, depending on your use case:
 Integrate **Request Inspector** as middleware in an **Express.js** application to log and analyze incoming API requests and webhook events. Ideal for adding inspection capabilities to existing Express Node.js applications.
 
 ### 🔹 Proxy Inspector
-Deploy **Request Inspector** as an HTTP proxy to intercept requests and responses between a client and a backend service. Useful for debugging API calls without modifying your application.
+Deploy **Request Inspector** as an **HTTP proxy** to intercept requests and responses send to a backend service. Useful for debugging API calls and webhook events without modifying your application.
 
 ## 🔍 Request inspections
 
