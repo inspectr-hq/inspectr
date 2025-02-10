@@ -1,10 +1,10 @@
-# Request Inspector
+# Inspectr
 
-> Request Inspector – Simplifying API and Webhook debugging!
+> Inspectr – Simplifying API and Webhook debugging!
 
-**Request Inspector** is a lightweight and efficient tool for reviewing, analyzing, and debugging API requests and webhook events. Whether you're testing integrations, monitoring incoming requests, or troubleshooting payload issues, Request Inspector provides the insights you need.
+**Inspectr** is a lightweight and efficient tool for reviewing, analyzing, and debugging API requests and webhook events. Whether you're testing integrations, monitoring incoming requests, or troubleshooting payload issues, Request Inspector provides the insights you need.
 
-<img src="https://raw.githubusercontent.com/thim81/request-inspector/main/assets/express-inspector-screenshot.png" alt="Request Inspector" width="80%">
+<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/express-inspector-screenshot.png" alt="Request Inspectr" width="80%">
 
 ## 🚀 Features
 
@@ -17,20 +17,20 @@
 
 # ⚙️ Components
 
-Request Inspector can be used in different ways, depending on your use case:
+Inspectr can be used in different ways, depending on your use case:
 
 ## 🔌 Request capturing
 
 ### 🔹 Express Middleware
-Integrate **Request Inspector** as middleware in an **Express.js** application to log and analyze incoming API requests and webhook events. Ideal for adding inspection capabilities to existing Express Node.js applications.
+Integrate **Inspectr** as middleware in an **Express.js** application to log and analyze incoming API requests and webhook events. Ideal for adding inspection capabilities to existing Express Node.js applications.
 
 ### 🔹 Proxy Inspector
-Deploy **Request Inspector** as an **HTTP proxy** to intercept requests and responses send to a backend service. Useful for debugging API calls and webhook events without modifying your application.
+Deploy **Inspectr** as an **HTTP proxy** to intercept requests and responses send to a backend service. Useful for debugging API calls and webhook events without modifying your application.
 
 ## 🔍 Request inspections
 
 ### 🔹 Standalone App
-Run **Request Inspector** as an independent application that can be deployed in various environments:
+Run **Inspectr** as an independent application that can be deployed in various environments:
 - **Localhost** – Self-hosted for debugging API requests or webhook events directly on your machine.
 - **VercelJS** – Cloud-hosted for easy access and seamless integration.
 
