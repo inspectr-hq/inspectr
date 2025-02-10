@@ -4,7 +4,7 @@
 
 **Inspectr** is a lightweight and efficient tool for reviewing, analyzing, and debugging API requests and webhook events. Whether you're testing integrations, monitoring incoming requests, or troubleshooting payload issues, Request Inspector provides the insights you need.
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/express-inspector-screenshot.png" alt="Request Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
 ## 🚀 Features
 
