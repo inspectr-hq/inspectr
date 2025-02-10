@@ -2,7 +2,7 @@
 
 > Inspectr – Simplifying API and Webhook debugging!
 
-**Inspectr** is a lightweight and efficient tool for reviewing, analyzing, and debugging API requests and webhook events. Whether you're testing integrations, monitoring incoming requests, or troubleshooting payload issues, Request Inspector provides the insights you need.
+**Inspectr** is a lightweight and efficient tool for reviewing, analyzing, and debugging API requests and webhook events. Whether you're testing integrations, monitoring incoming requests, or troubleshooting payload issues, Inspectr provides the insights you need.
 
 <img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
@@ -24,7 +24,7 @@ Inspectr can be used in different ways, depending on your use case:
 ### 🔹 Express Middleware
 Integrate **Inspectr** as middleware in an **Express.js** application to log and analyze incoming API requests and webhook events. Ideal for adding inspection capabilities to existing Express Node.js applications.
 
-### 🔹 Proxy Inspector
+### 🔹 Proxy Inspectr
 Deploy **Inspectr** as an **HTTP proxy** to intercept requests and responses send to a backend service. Useful for debugging API calls and webhook events without modifying your application.
 
 ## 🔍 Request inspections
