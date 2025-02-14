@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Inspectr HTTP Request/Response",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "server": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "clientIp": {
+      "type": "string"
+    },
+    "latency": {
+      "type": "number"
+    },
+    "request": {
+      "type": "object",
+      "properties": {
+        "payload": {
+          "type": "string"
+        },
+        "headers": {
+          "type": "object"
+        },
+        "queryParams": {
+          "type": "object"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "payload",
+        "headers",
+        "queryParams",
+        "timestamp"
+      ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "payload": {
+          "type": "string"
+        },
+        "headers": {
+          "type": "object"
+        },
+        "statusCode": {
+          "type": "integer"
+        },
+        "statusMessage": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "payload",
+        "headers",
+        "statusCode",
+        "statusMessage",
+        "timestamp"
+      ]
+    }
+  },
+  "required": [
+    "method",
+    "url",
+    "server",
+    "path",
+    "clientIp",
+    "latency",
+    "request",
+    "response"
+  ]
+}
