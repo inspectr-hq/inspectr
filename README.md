@@ -119,10 +119,11 @@ More info can be found in the [Inspectr App](https://github.com/thim81/inspectr-
 The Inspectr Proxy is a high-performance HTTP proxy that captures every incoming request and outgoing response.
 
 **Download Pre-compiled Binaries**
-Download the [latest binaries](https://github.com/thim81/inspectr-proxy/releases) from
-the [Releases](https://github.com/thim81/inspectr-proxy/releases) page.
+
+Download the [latest binaries](https://github.com/thim81/inspectr-proxy/releases) from the [Releases](https://github.com/thim81/inspectr-proxy/releases) page.
 
 **Running the Proxy**
+
 Once downloaded or built, you can run the proxy with your desired configuration. For example:
 
 ```bash
@@ -153,6 +154,7 @@ incoming request and outgoing response from your Express service, with a UI to c
 real time.
 
 **Installation**
+
 Install via npm:
 
 ```bash
@@ -160,6 +162,7 @@ npm install @inspectr/express
 ```
 
 **Quick Start**
+
 Add the middleware to your Express application:
 
 ```js
@@ -189,8 +192,8 @@ For more detailed instructions, configuration options, and usage examples, check
 the [@inspectr/express documentation](https://github.com/thim81/inspectr-express).
 
 **Running the Inspectr App**
-The Inspectr App provides a live and historical view of all the received requests and returned responses of your Express
-service.
+
+The Inspectr App provides a live and historical view of all the received requests and returned responses of your Express service.
 
 Via npx (if installed locally):
 
@@ -207,6 +210,3 @@ or as package.json script
 ```
 
 Then open your browser to http://localhost:4004 to view the Inspectr interface.
-
-
-
