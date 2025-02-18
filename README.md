@@ -52,10 +52,10 @@ webhook manually (especially when third-party systems are involved). With Inspec
 events automatically, and even replay requests when needed—eliminating the need to simulate the action in the
 third-party system repeatedly.
 
-When building applications that rely on webhooks or external callbacks, it can be difficult to get a clear view on which
-request they are sending. Inspectr automatically captures the incoming webhook events or forward them to your service,
-allowing you to review and debug them without having to repeatedly simulate the triggering action. You can even replay
-captured requests when needed, ensuring that your integrations work reliably without the hassle of manual testing.
+- Expose a public endpoint for remote systems triggering webhooks
+- Catch all webhook events without having a running backend
+- Replay captured webhook requests
+- Debug third-party integrations
 
 <img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-webhook.png" alt="Request Inspectr" width="80%">
 
@@ -70,6 +70,11 @@ webhook events.
 For front-end applications, you can simply replace your API endpoint URL with the Inspectr Proxy URL. This enables you
 to inspect & collect outgoing requests and their responses without any additional backend configuration. Combine the
 Proxy with your existing front-end workflow for a transparent debugging experience.
+
+- Plug Inspectr into your front-end with only a base URL change
+- View outgoing requests and responses without modifying the backend
+- Have the history of requests & responses available for analyzing
+- Works with any framework or HTTP client
 
 <img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
