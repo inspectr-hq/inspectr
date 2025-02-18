@@ -89,8 +89,8 @@ Inspectr can be used in different ways, depending on your use case:
 
 ### 🔹 Proxy Inspectr
 
-Deploy **Inspectr** as an **HTTP proxy
-** to intercept requests and responses sent to a backend service. Useful for debugging API calls and webhook events without modifying your application. This allows you to inspect request details, analyze responses, log traffic in real-time, and troubleshoot API issues by just a simple configuration change.
+Deploy **Inspectr** as an **HTTP proxy** to intercept requests and responses sent to a backend service.
+Useful for debugging API calls and webhook events without modifying your application. This allows you to inspect request details, analyze responses, log traffic in real-time, and troubleshoot API issues by just a simple configuration change.
 
 More info can be found in the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy) repository.
 
