@@ -173,7 +173,7 @@ const inspectr = require('@inspectr/express').capture;
 const app = express();
 
 // Add the Inspectr middleware before your routes
-app.use(Inspectr.capture);
+app.use(inspectr.capture);
 
 // Define your routes
 app.get('/', (req, res) => {
