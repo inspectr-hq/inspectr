@@ -73,7 +73,7 @@ Proxy with your existing front-end workflow for a transparent debugging experien
 
 <img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
-Have a look at the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy) documentation to see how easy it is to use
+Have a look at the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy?tab=readme-ov-file#inspecting-front-end-api-requests) documentation to see how easy it is to use
 it in your front-end application.
 
 # Components
