@@ -122,6 +122,15 @@ The Inspectr Proxy is a high-performance HTTP proxy that captures every incoming
 
 Download the [latest binaries](https://github.com/thim81/inspectr-proxy/releases) from the [Releases](https://github.com/thim81/inspectr-proxy/releases) page.
 
+**Homebrew**
+
+or install on Mac via Homebrew
+
+```bash
+brew tap thim81/inspectr
+brew install inspectr
+```
+
 **Running the Proxy**
 
 Once downloaded or built, you can run the proxy with your desired configuration. For example:
