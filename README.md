@@ -7,9 +7,9 @@ events. Useful for testing integrations, monitoring incoming requests, reviewing
 payload issues, Inspectr
 provides the insights you need.
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-console.png" alt="Console Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-console.png" alt="Console Inspectr" width="80%">
 
 ## 🚀 Features
 
@@ -36,14 +36,14 @@ endpoints. The Inspectr App allows you to:
 - This immediate feedback is invaluable when documentation is incomplete or out of date, ensuring you can build reliable
   integrations.
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-console.png" alt="Console Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-console.png" alt="Console Inspectr" width="80%">
 
 Read the
-article [how to capture and debug API requests](https://github.com/thim81/inspectr-proxy?tab=readme-ov-file#inspecting-api-http-traffic)
+article [how to capture and debug API requests](https://github.com/inspectr-hq/inspectr-proxy?tab=readme-ov-file#inspecting-api-http-traffic)
 with
-the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy) and inspect all the details in the Inspectr viewer.
+the [Inspectr Proxy](https://github.com/inspectr-hq/inspectr-proxy) and inspect all the details in the Inspectr viewer.
 
 ### Webhook Capturing Service
 
@@ -57,12 +57,12 @@ third-party system repeatedly.
 - Replay captured webhook requests
 - Debug third-party integrations
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-webhook.png" alt="Request Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-webhook.png" alt="Request Inspectr" width="80%">
 
 Read
-the "[Inspecting Webhook Events](https://github.com/thim81/inspectr-proxy?tab=readme-ov-file#inspecting-webhook-events)"
+the "[Inspecting Webhook Events](https://github.com/inspectr-hq/inspectr-proxy?tab=readme-ov-file#inspecting-webhook-events)"
 article which explains how to use
-the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy) to create a public webhook endpoint that catches all
+the [Inspectr Proxy](https://github.com/inspectr-hq/inspectr-proxy) to create a public webhook endpoint that catches all
 webhook events.
 
 ### Front-End Projects
@@ -76,9 +76,9 @@ Proxy with your existing front-end workflow for a transparent debugging experien
 - Have the history of requests & responses available for analyzing
 - Works with any framework or HTTP client
 
-<img src="https://raw.githubusercontent.com/thim81/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
+<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
-Have a look at the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy?tab=readme-ov-file#inspecting-front-end-api-requests) documentation to see how easy it is to use
+Have a look at the [Inspectr Proxy](https://github.com/inspectr-hq/inspectr-proxy?tab=readme-ov-file#inspecting-front-end-api-requests) documentation to see how easy it is to use
 it in your front-end application.
 
 # Components
@@ -92,14 +92,14 @@ Inspectr can be used in different ways, depending on your use case:
 Deploy **Inspectr** as an **HTTP proxy** to intercept requests and responses sent to a backend service.
 Useful for debugging API calls and webhook events without modifying your application. This allows you to inspect request details, analyze responses, log traffic in real-time, and troubleshoot API issues by just a simple configuration change.
 
-More info can be found in the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy) repository.
+More info can be found in the [Inspectr Proxy](https://github.com/inspectr-hq/inspectr-proxy) repository.
 
 ### 🔹 Express Middleware
 
 Integrate **Inspectr** as middleware in an **Express.js** application to log and analyze incoming API requests and
 webhook events. Ideal for adding inspection capabilities to existing Express Node.js applications.
 
-More info can be found in the [Inspectr Express](https://github.com/thim81/inspectr-express) repository.
+More info can be found in the [Inspectr Express](https://github.com/inspectr-hq/inspectr-express) repository.
 
 ## 🔍 Request inspections
 
@@ -110,7 +110,7 @@ Run **Inspectr** as an independent application that can be deployed in various e
 - **Localhost** – Self-hosted for debugging API requests or webhook events directly on your machine.
 - **VercelJS** – Cloud-hosted for easy access and seamless integration.
 
-More info can be found in the [Inspectr App](https://github.com/thim81/inspectr-app) repository.
+More info can be found in the [Inspectr App](https://github.com/inspectr-hq/inspectr-app) repository.
 
 # 🔧 Installation & Setup
 
@@ -120,14 +120,14 @@ The Inspectr Proxy is a high-performance HTTP proxy that captures every incoming
 
 **Download Pre-compiled Binaries**
 
-Download the [latest binaries](https://github.com/thim81/inspectr-proxy/releases) from the [Releases](https://github.com/thim81/inspectr-proxy/releases) page.
+Download the [latest binaries](https://github.com/inspectr-hq/inspectr-proxy/releases) from the [Releases](https://github.com/inspectr-hq/inspectr-proxy/releases) page.
 
 **Homebrew**
 
 or install on Mac via Homebrew
 
 ```bash
-brew tap thim81/inspectr
+brew tap inspectr-hq/inspectr
 brew install inspectr
 ```
 
@@ -154,7 +154,7 @@ The Inspectr App provides a live and historical view of the requests and respons
 at http://localhost:4004.
 
 For detailed options and configuration (including YAML support), have a look at to
-the [Inspectr Proxy](https://github.com/thim81/inspectr-proxy) documentation.
+the [Inspectr Proxy](https://github.com/inspectr-hq) documentation.
 
 ## Using Inspectr in an Express App
 
@@ -198,7 +198,7 @@ app.listen(PORT, () => {
 ```
 
 For more detailed instructions, configuration options, and usage examples, check out
-the [@inspectr/express documentation](https://github.com/thim81/inspectr-express).
+the [@inspectr/express documentation](https://github.com/inspectr-hq/inspectr-express).
 
 **Running the Inspectr App**
 
