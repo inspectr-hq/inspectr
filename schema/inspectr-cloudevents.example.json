@@ -1,19 +1,19 @@
 {
   "specversion": "1.0",
-  "type": "com.inspectr.http",
-  "source": "/inspectr",
   "id": "36851845-66ac-418e-a7b7-03bd9ab89b99",
+  "type": "dev.inspectr.http",
+  "source": "/inspectr",
   "time": "2025-02-14T17:57:35.436Z",
   "datacontenttype": "application/json",
   "data": {
-    "method": "POST",
-    "url": "http://localhost:3000/api/users?sort=asc",
-    "server": "localhost:3000",
-    "path": "/api/users",
-    "clientIp": "192.168.1.100",
-    "latency": 120,
+    "requestId": "req-123",
     "request": {
-      "payload": "{\"name\":\"Marco Polo\",\"email\":\"marco@polo-ventures.com\"}",
+      "method": "POST",
+      "url": "http://localhost:3000/api/users?sort=asc",
+      "server": "localhost:3000",
+      "path": "/api/users",
+      "clientIp": "192.168.1.100",
+      "httpVersion": "HTTP/1.1",
       "headers": {
         "Content-Type": "application/json",
         "Host": "localhost:3000"
@@ -21,16 +21,33 @@
       "queryParams": {
         "sort": "asc"
       },
-      "timestamp": "2025-02-14T15:00:00.000Z"
+      "payload": "{\"name\":\"Marco Polo\",\"email\":\"marco@polo-ventures.com\"}"
     },
     "response": {
-      "payload": "{\"success\":true,\"id\":123}",
+      "statusCode": 200,
+      "statusMessage": "OK",
+      "httpVersion": "HTTP/1.1",
       "headers": {
         "Content-Type": "application/json"
       },
-      "statusCode": 200,
-      "statusMessage": "OK",
-      "timestamp": "2025-02-14T15:00:00.120Z"
+      "payload": "{\"success\":true,\"id\":123}",
+      "content": {
+        "size": 9521,
+        "mimeType": "text/html",
+        "compression": 5896
+      }
+    },
+    "timing": {
+      "requestStart": "2025-02-22T12:34:56.789Z",
+      "requestEnd": "2025-02-22T12:34:56.912Z",
+      "durationMs": 123
+    },
+    "meta": {
+      "proxyInstance": "inspectr-proxy-1",
+      "tags": [
+        "api",
+        "debug"
+      ]
     }
   }
 }

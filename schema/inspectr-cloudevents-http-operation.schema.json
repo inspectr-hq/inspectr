@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inspectr CloudEvent",
+  "description": "CloudEvent schema for Inspectr HTTP request-response transactions.",
+  "type": "object",
+  "required": ["specversion", "id", "type", "time", "source", "datacontenttype", "data"],
+  "properties": {
+    "specversion": {
+      "type": "string",
+      "enum": ["1.0"],
+      "description": "CloudEvents specification version."
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique event identifier."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "dev.inspectr.operation.http.v1.received",
+        "dev.inspectr.operation.http.v1.completed",
+        "dev.inspectr.operation.http.v1.failed",
+        "dev.inspectr.operation.http.v1.updated"
+      ],
+      "description": "CloudEvent type, indicating the lifecycle stage of the HTTP request-response operation."
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the event was generated (ISO 8601 format)."
+    },
+    "source": {
+      "type": "string",
+      "description": "The source of the event (e.g., `//ingress.inspectr.dev/TOPIC_NAME`)."
+    },
+    "channel": {
+      "type": "string",
+      "description": "The channel of the event."
+    },
+    "datacontenttype": {
+      "type": "string",
+      "enum": ["application/json"],
+      "description": "MIME type of the event payload, typically `application/json`."
+    },
+    "data": {
+      "type": "object",
+      "description": "The actual Inspectr request-response operation data, as per the Inspectr HTTP event schema."
+    }
+  }
+}
