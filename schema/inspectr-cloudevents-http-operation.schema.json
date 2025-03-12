@@ -34,6 +34,10 @@
       "type": "string",
       "description": "The source of the event (e.g., `//ingress.inspectr.dev/TOPIC_NAME`)."
     },
+    "channel": {
+      "type": "string",
+      "description": "The channel of the event."
+    },
     "datacontenttype": {
       "type": "string",
       "enum": ["application/json"],
