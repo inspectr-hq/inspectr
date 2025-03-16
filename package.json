@@ -1,0 +1,42 @@
+{
+  "name": "@inspectr/inspectr",
+  "version": "0.0.0",
+  "description": "Inspectr - Capture and inspect HTTP requests/responses with a built-in Inspectr App.",
+  "author": "Tim Haselaars",
+  "homepage": "https://github.com/inspectr-hq/inspectr#readme",
+  "bugs": "https://github.com/inspectr-hq/inspectr/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspectr-hq/inspectr.git"
+  },
+  "bin": {
+    "inspectr": "./bin/inspectr"
+  },
+  "files": [],
+  "scripts": {
+    "postinstall": "go-npm install",
+    "preuninstall": "go-npm uninstall",
+    "test": "echo 'test completed'",
+    "release": "npx np --branch main"
+  },
+  "goBinary": {
+    "name": "inspectr",
+    "path": "./bin",
+    "url": "https://github.com/inspectr-hq/inspectr/releases/download/v{{version}}/inspectr_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  },
+  "dependencies": {
+    "go-npm-next": "^1.0.6"
+  },
+  "keywords": [
+    "inspectr",
+    "inspector",
+    "proxy",
+    "middleware",
+    "viewer",
+    "logger",
+    "request",
+    "response",
+    "webhooks",
+    "SSE"
+  ]
+}
