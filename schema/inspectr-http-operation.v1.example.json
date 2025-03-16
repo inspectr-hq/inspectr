@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "operation_id": "1234567",
+  "correlation_id": "xyz-7890",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/users?sort=asc",
+    "path": "/api/users",
+    "server": "localhost:3000",
+    "client_ip": "192.168.1.100",
+    "http_version": "HTTP/1.1",
+    "headers": [
+      { "name": "User-Agent", "value": "MyBrowser/1.0" },
+      { "name": "Content-Type", "value": "application/json" }
+    ],
+    "headers_size": 350,
+    "query_params":  [
+      { "name": "sort", "value": "asc" }
+    ],
+    "cookies": [],
+    "body": "{\"name\":\"Marco Polo\",\"email\":\"marco@polo-ventures.com\"}",
+    "body_size": 70,
+    "timestamp": "2025-02-14T15:00:00.120Z"
+  },
+  "response": {
+    "status": 201,
+    "status_text": "Created",
+    "http_version": "HTTP/1.1",
+    "headers": [
+      { "name": "Content-Type", "value": "application/json" },
+      { "name": "Server", "value": "ExampleServer/1.0" }
+    ],
+    "headers_size": 220,
+    "cookies": [],
+    "body": "{\"success\":true,\"id\":123}",
+    "body_size": 75,
+    "timestamp": "2025-02-14T15:01:00.120Z"
+  },
+  "timing": {
+    "request": "2025-02-22T12:34:56.789Z",
+    "response": "2025-02-22T12:34:56.912Z",
+    "duration": 123
+  },
+  "meta": {
+    "proxy_instance": "inspectr-proxy-1"
+  }
+}

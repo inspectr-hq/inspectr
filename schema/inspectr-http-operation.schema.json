@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inspectr HTTP Operation",
+  "description": "Schema for Inspectr HTTP operation, capturing request, response, timing, and metadata.",
+  "type": "object",
+  "required": ["version", "operation_id", "request", "timing"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version. Should be '1.0'."
+    },
+    "operation_id": {
+      "type": "string",
+      "description": "Unique identifier for the HTTP operation, used for tracking this specific request-response transaction."
+    },
+    "correlation_id": {
+      "type": "string",
+      "description": "Correlation ID used to track related operations across multiple services."
+    },
+    "request": {
+      "type": "object",
+      "description": "Details of the HTTP request.",
+      "required": ["method", "url", "server", "path", "client_ip", "http_version", "headers", "timestamp"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "description": "HTTP method (GET, POST, PUT, DELETE, etc.)."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Full request URL including query parameters."
+        },
+        "path": {
+          "type": "string",
+          "description": "The request path (without query parameters)."
+        },
+        "server": {
+          "type": "string",
+          "description": "The hostname or IP of the server that received the request."
+        },
+        "client_ip": {
+          "type": "string",
+          "format": "ipv4",
+          "description": "IP address of the client that initiated the request."
+        },
+        "http_version": {
+          "type": "string",
+          "description": "HTTP version used for the request (e.g., HTTP/1.1, HTTP/2)."
+        },
+        "headers": {
+          "type": "array",
+          "description": "List of HTTP headers in the request.",
+          "items": {
+            "type": "object",
+            "required": ["name", "value"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Header name."
+              },
+              "value": {
+                "type": "string",
+                "description": "Header value."
+              }
+            }
+          }
+        },
+        "headers_size": {
+          "type": "integer",
+          "description": "Size of the request headers in bytes."
+        },
+        "query_params": {
+          "type": "array",
+          "description": "Query parameters included in the request URL.",
+          "items": {
+            "type": "object",
+            "required": ["name", "value"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Query parameter name."
+              },
+              "value": {
+                "type": "string",
+                "description": "Query parameter value."
+              }
+            }
+          }
+        },
+        "cookies": {
+          "type": "array",
+          "description": "Cookies sent with the request.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "string",
+          "description": "Raw body of the request (if any). May be encoded as a JSON string."
+        },
+        "body_size": {
+          "type": "integer",
+          "description": "Size of the request body in bytes."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the request was received."
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "description": "Details of the HTTP response.",
+      "required": ["status", "status_text", "headers", "timestamp"],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "HTTP response status code (e.g., 200, 404, 500)."
+        },
+        "status_text": {
+          "type": "string",
+          "description": "Human-readable status message (e.g., 'OK', 'Created', 'Not Found')."
+        },
+        "http_version": {
+          "type": "string",
+          "description": "HTTP version used in the response."
+        },
+        "headers": {
+          "type": "array",
+          "description": "List of HTTP headers in the response.",
+          "items": {
+            "type": "object",
+            "required": ["name", "value"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Header name."
+              },
+              "value": {
+                "type": "string",
+                "description": "Header value."
+              }
+            }
+          }
+        },
+        "headers_size": {
+          "type": "integer",
+          "description": "Size of the response headers in bytes."
+        },
+        "cookies": {
+          "type": "array",
+          "description": "Cookies included in the response.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "string",
+          "description": "Raw body of the response (if any). May be encoded as a JSON string."
+        },
+        "body_size": {
+          "type": "integer",
+          "description": "Size of the response body in bytes."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the response was received."
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "description": "Timing information for the request-response cycle.",
+      "required": ["request", "response", "duration"],
+      "properties": {
+        "request": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the request was initiated."
+        },
+        "response": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the response was received."
+        },
+        "duration": {
+          "type": "integer",
+          "description": "Duration of the entire request-response cycle in milliseconds."
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "description": "Additional metadata related to the event.",
+      "required": ["proxy_instance"],
+      "properties": {
+        "proxy_instance": {
+          "type": "string",
+          "description": "Identifier for the proxy instance that handled this request."
+        }
+      }
+    }
+  }
+}
