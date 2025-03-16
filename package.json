@@ -1,6 +1,6 @@
 {
   "name": "@inspectr/inspectr",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Inspectr - Capture and inspect HTTP requests/responses with a built-in Inspectr App.",
   "author": "Tim Haselaars",
   "homepage": "https://github.com/inspectr-hq/inspectr#readme",
@@ -17,7 +17,7 @@
     "postinstall": "go-npm install",
     "preuninstall": "go-npm uninstall",
     "test": "echo 'test completed'",
-    "release": "npx np --branch main"
+    "release": "npm publish --access public"
   },
   "goBinary": {
     "name": "inspectr",

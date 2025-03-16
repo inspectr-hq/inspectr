@@ -24,7 +24,6 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 
 ## 🚀 Quick Start
 
-
 Install via brew or npm:
 ```bash
 brew install inspectr
@@ -39,7 +38,6 @@ inspectr --listen=:8080 --backend=http://localhost:3000
 ```
 
 Visit the UI: http://localhost:4004
-
 
 Make your request to your backend 
 
@@ -146,6 +144,11 @@ More info can be found in the [Inspectr App](https://github.com/inspectr-hq/insp
 ## Install Inspectr
 
 Installing Inspectr is easy with a variety of options to match your workflow. Whether you prefer the convenience of a package manager, the simplicity of a macOS installation, or direct access to pre-built binaries, we've got you covered.
+
+<a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
+<a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
+
+[//]: # (<a href="https://www.npmjs.com/package/@inspectr/inspectr" alt="Total Downloads">![npm]&#40;https://img.shields.io/npm/dw/@inspectr/inspectr.svg&#41;</a>)
 
 ### **NPM**
 
