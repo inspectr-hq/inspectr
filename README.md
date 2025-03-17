@@ -25,7 +25,9 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 ## 🚀 Quick Start
 
 Install via brew or npm:
+
 ```bash
+brew tap inspectr-hq/inspectr
 brew install inspectr
 ```
 or
