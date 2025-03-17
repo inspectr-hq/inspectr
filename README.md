@@ -27,7 +27,9 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 Install via brew or npm:
 ```bash
 brew install inspectr
-# or
+```
+or
+```bash
 npm install -g inspectr
 ```
 
@@ -219,8 +221,7 @@ Suppose you have a backend service running on port
 You would start your Inspectr as follows:
 
 ```bash
-./inspectr --listen=":8080" \
---backend="http://localhost:3000"
+./inspectr --listen=":8080" --backend="http://localhost:3000"
 ```
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
@@ -376,7 +377,7 @@ This will:
 | `--channel`      | string  | ``        | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
 | `--channel-code` | string  | ``        | Configure the Security code required to access your Ingress channel.                                                           |
 | `--config`       | string  | `(empty)` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
-| `--apiSecret`   | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
+| `--apiSecret`    | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
 | `--version`      | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
 | `--log-level`    | string  | `(empty)` | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
 
