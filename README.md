@@ -32,7 +32,7 @@ brew install inspectr
 ```
 or
 ```bash
-npm install -g inspectr
+npm install -g @inspectr/inspectr
 ```
 
 Run Inspectr:
