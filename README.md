@@ -314,6 +314,9 @@ real-time without modifying the backend.
 If you start your local Inspectr with `--expose`, your local service will be exposed publicly. 
 Optionally, use `--channel` to request your preferred subdomain, if you have not preferred `--channel`, a random channel will be selected. A security code to protect your channel & subdomain will be generated or it can be set to your preference, using the `channel-code` parameter.
 
+> [!NOTE]
+> Inspectr will use the `channel`  to create subdomains on `in-spectr.dev` (notice the -)
+
 For example:
 
 ```bash
@@ -329,9 +332,21 @@ expose: true
 channel: "your-channel-abc"
 ```
 
+Your service is now available on https://your-channel-abc.in-spectr.dev
+
+```bash
+curl https://your-channel-abc.in-spectr.dev
+```
+
+and locally on http://localhost:8080
+
+```bash
+curl http://localhost:8080
+```
+
 This will:
 
-- Expose the proxy publicly via Inspectr Ingress (attempting to use the subdomain "your-channel-abc"), forwarding requests to the
+- Expose the proxy publicly via Inspectr Ingress (attempting to use the subdomain `your-channel-abc` on `https://in-spectr.dev`), forwarding requests to the
   local Inspectr on `8080`.
 - The local Inspectr listens on port `8080` forward local and remote requests to the backend at http://localhost:30000.
 - Print the received requests in the terminal
