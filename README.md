@@ -17,7 +17,7 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **API Proxy** - Forwards incoming requests to a configured backend service and returns the backend response.
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
-- **Public Exposure** - Expose your local service to be accessible for remote system, with the ability to define a secured,customizable subdomain.
+- **Public Exposure** - Expose your local API service, AI model or MCP server to be accessible for remote system, with the ability to define a secured, customizable subdomain.
 - **Validation & Debugging** – Identify issues in request structures, missing parameters, and incorrect headers. View decoded JWT tokens for faster investigation.
 - **Easy integration** – Capture requests through a Proxy or as Express middleware.
 - **Lightweight & Fast** – Built for performance with minimal dependencies.
@@ -81,7 +81,7 @@ When developing locally, you often need to test integrations or share your local
 
 - **Real-time Request Capture** – Monitor requests hitting your local service instantly in both the Inspectr UI and console.
 
-- **AI services** – Seamlessly expose local AI and LLM models, enabling easy integration testing, collaboration, or demonstrations.
+- **AI services** – Seamlessly expose local AI, LLM models or MCP servers, enabling easy integration collaboration, or demonstrations from your laptop
 
 - **Collaboration-Friendly** – Quickly share your endpoint with colleagues, stakeholders, or external systems to streamline feedback and testing cycles.
 
