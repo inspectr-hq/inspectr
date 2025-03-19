@@ -380,15 +380,11 @@ Configure Inspectr to forward requests to the API endpoints:
 This approach seamlessly integrates Inspectr into your front-end workflow, allowing you to monitor API interactions in
 real-time without modifying the backend.
 
-
-
 ### Exposing Your Ollama API via Inspectr
 
 When developing and experimenting with local AI services like [Ollama](https://ollama.com/), you often need a quick way to expose your local model to external services, integrations, or collaborators. Inspectr simplifies this task, securely forwarding requests to your Ollama API without complicated network configurations or firewall changes.
 
-#### How to Expose Ollama API:
-
-**Step 1: Start Your Ollama Server**
+**Start Your Ollama Server**
 
 Ensure your Ollama service is running locally. By default, Ollama runs on port `11434`:
 
@@ -396,7 +392,7 @@ Ensure your Ollama service is running locally. By default, Ollama runs on port `
 ollama serve
 ```
 
-**Step 2: Run Inspectr to Expose Ollama**
+**Run Inspectr to Expose Ollama**
 
 Execute Inspectr to securely expose your Ollama API externally:
 
@@ -404,17 +400,13 @@ Execute Inspectr to securely expose your Ollama API externally:
 inspectr --listen=":8080" --backend="http://localhost:11434" --expose --channel="my-ollama-api"
 ```
 
-- `--backend`: Points to your local Ollama server.
-- `--expose`: Enables public exposure via Inspectr Ingress.
-- `--channel`: Custom subdomain for easy sharing.
-
 Your Ollama API is now publicly available at:
 
 ```bash
 https://my-ollama-api.in-spectr.dev
 ```
 
-**Step 3: Accessing the API Remotely**
+**Accessing the API Remotely**
 
 Now external services or team members can interact directly with your Ollama API remotely:
 
@@ -422,7 +414,19 @@ Now external services or team members can interact directly with your Ollama API
 curl https://my-ollama-api.in-spectr.dev/api/generate -d '{"model": "llama2", "prompt": "Hello, world!"}'
 ```
 
+**Explanation:**
 
+- `--listen=":8080"`: Sets Inspectr to listen on port `8080` locally.
+
+- `--backend="http://localhost:11434"`: Points Inspectr to your running Ollama API (default port is `11434`).
+
+- `--expose`: Activates public exposure of your Inspectr service via Inspectr Ingress.
+
+- `--channel="my-ollama-api"`: Defines a custom, easy-to-share subdomain.
+
+
+
+As soon as you stop your local Inspectr instance, your channel/subdomain and connection will be removed.
 
 ---
 
