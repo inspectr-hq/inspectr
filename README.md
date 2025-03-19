@@ -155,7 +155,7 @@ Installing Inspectr is easy with a variety of options to match your workflow. Wh
 
 [//]: # (<a href="https://www.npmjs.com/package/@inspectr/inspectr" alt="Total Downloads">![npm]&#40;https://img.shields.io/npm/dw/@inspectr/inspectr.svg&#41;</a>)
 
-### **NPM**
+**NPM**
 
 Install Inspectr via npm using the following command:
 
@@ -215,6 +215,8 @@ curl http://localhost:8080/
 > Inspectr Ingress is a public ingress service, that lets you easily share local web services publicly. It assigns a unique
 > URL (like [https://your-channel-abc.in.inspectr.dev](https://your-channel-abc.in.inspectr.dev)) that forwards requests to your locally running server (
 > e.g., [http://localhost:3000](http://localhost:3000)), bypassing DNS and firewall hassles.
+
+## Configuration
 
 If you start your local Inspectr with `--expose`, your local service will be exposed publicly. 
 Optionally, use `--channel` to request your preferred subdomain, if you have not preferred `--channel`, a random channel will be selected. A security code to protect your channel & subdomain will be generated or it can be set to your preference, using the `channel-code` parameter.
@@ -424,9 +426,9 @@ curl https://my-ollama-api.in-spectr.dev/api/generate -d '{"model": "llama2", "p
 
 ---
 
-## Configuration options
+# Configuration options
 
-### Command-Line Options
+## Command-Line Options
 
 | Flag             | Type    | Default   | Description                                                                                                                    |
 | ---------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -444,7 +446,7 @@ curl https://my-ollama-api.in-spectr.dev/api/generate -d '{"model": "llama2", "p
 | `--version`      | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
 | `--log-level`    | string  | `(empty)` | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
 
-### YAML Configuration File (.inspectr.yaml) Options
+## YAML Configuration File (.inspectr.yaml) Options
 
 In addition to command-line flags, you can configure Inspectr using a YAML file. 
 
