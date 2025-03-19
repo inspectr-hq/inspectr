@@ -30,7 +30,9 @@ Install via brew or npm:
 brew tap inspectr-hq/inspectr
 brew install inspectr
 ```
+
 or
+
 ```bash
 npm install -g @inspectr/inspectr
 ```
@@ -48,7 +50,6 @@ Make your request to your backend
 ```bash
 curl http://localhost:8080/
 ```
-
 
 ## 🎯 Use Cases
 
@@ -154,7 +155,7 @@ Installing Inspectr is easy with a variety of options to match your workflow. Wh
 
 [//]: # (<a href="https://www.npmjs.com/package/@inspectr/inspectr" alt="Total Downloads">![npm]&#40;https://img.shields.io/npm/dw/@inspectr/inspectr.svg&#41;</a>)
 
-### **NPM**
+**NPM**
 
 Install Inspectr via npm using the following command:
 
@@ -207,6 +208,78 @@ curl http://localhost:8080/
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-hello.png" alt="Inspectr" width="80%">
 
+---
+
+# Exposing Inspectr publicly with Inspect Ingress
+
+> Inspectr Ingress is a public ingress service, that lets you easily share local web services publicly. It assigns a unique
+> URL (like [https://your-channel-abc.in.inspectr.dev](https://your-channel-abc.in.inspectr.dev)) that forwards requests to your locally running server (
+> e.g., [http://localhost:3000](http://localhost:3000)), bypassing DNS and firewall hassles.
+
+## Configuration
+
+If you start your local Inspectr with `--expose`, your local service will be exposed publicly. 
+Optionally, use `--channel` to request your preferred subdomain, if you have not preferred `--channel`, a random channel will be selected. A security code to protect your channel & subdomain will be generated or it can be set to your preference, using the `channel-code` parameter.
+
+> [!NOTE]
+> Inspectr will use the `channel` to create subdomains on `in-spectr.dev` (notice the -)
+
+For example:
+
+```bash
+./inspectr --listen=":8080" --backend="http://localhost:3000" --expose --channel="your-channel-abc"
+```
+
+or by executing `./inspectr` with the configuration set in `.inspectr.yaml` file
+
+```yaml
+listen: ":8080"
+backend: "http://localhost:3000"
+expose: true
+channel: "your-channel-abc"
+```
+
+Your service is now available on [https://your-channel-abc.in-spectr.dev](https://your-channel-abc.in-spectr.dev)
+
+```bash
+curl https://your-channel-abc.in-spectr.dev
+```
+
+and locally on [http://localhost:8080](http://localhost:8080)
+
+```bash
+curl http://localhost:8080
+```
+
+This will:
+
+- Expose the proxy publicly via Inspectr Ingress (attempting to use the subdomain `your-channel-abc` on `https://in-spectr.dev`), forwarding requests to the
+  local Inspectr on `8080`.
+- The local Inspectr listens on port `8080` forward local and remote requests to the backend at [http://localhost:30000](http://localhost:30000).
+- Print the received requests in the terminal
+- Show the captured data real-time in Inspectr App in your browser
+
+## How It Works
+
+1. Proxy Mode:
+   
+   Your local proxy Inspectr instance listens on the specified `--listen` address. If a backend is defined via `--backend`, it forwards the
+   incoming HTTP request to that backend and relays the response back to the client. If `--ingress` is enabled, the proxy Inspectr is exposed publicly via the Inspectr Ingress service.
+
+2. Data Capture & Wrapping:
+   
+   All request and response details are captured into an Inspectr Operation data structure. This data is then wrapped in a
+   CloudEvents envelope.
+
+3. Embedded Inspectr App:
+   
+   The embedded Inspectr App server runs on the port specified by `--app-port` and serves the Inspectr UI for real‑time
+   updates.
+
+4. Broadcasting & Logging:
+   
+      - If the `--print` flag is enabled, a color‑coded summary of each transaction is printed to the console.
+      - If the embedded app mode is enabled (`--app`), the data is also broadcast internally via SSE.
 
 ---
 
@@ -293,7 +366,9 @@ Configure Inspectr to forward requests to the API endpoints:
 **Explanation:**
 
 - The front-end makes requests to http://localhost:8080 instead of the original API.
+
 - Inspectr forwards requests to https://api.example.com and relays the responses.
+
 - All captured requests and responses are logged in the Inspectr App (http://localhost:4004).
 
 - If needed, you can enable "expose" to make the API endpoints publicly available
@@ -305,85 +380,62 @@ Configure Inspectr to forward requests to the API endpoints:
 This approach seamlessly integrates Inspectr into your front-end workflow, allowing you to monitor API interactions in
 real-time without modifying the backend.
 
-## Exposing Inspectr publicly with Inspect Ingress
+### Exposing Your Ollama API via Inspectr
 
-> Inspectr Ingress is a public ingress service, that lets you easily share local web services publicly. It assigns a unique
-> URL (like https://your-channel-abc.in.inspectr.dev) that forwards requests to your locally running server (
-> e.g., http://localhost:3000), bypassing DNS and firewall hassles.
+When developing and experimenting with local AI services like [Ollama](https://ollama.com/), you often need a quick way to expose your local model to external services, integrations, or collaborators. Inspectr simplifies this task, securely forwarding requests to your Ollama API without complicated network configurations or firewall changes.
 
-If you start your local Inspectr with `--expose`, your local service will be exposed publicly. 
-Optionally, use `--channel` to request your preferred subdomain, if you have not preferred `--channel`, a random channel will be selected. A security code to protect your channel & subdomain will be generated or it can be set to your preference, using the `channel-code` parameter.
+**Start Your Ollama Server**
 
-> [!NOTE]
-> Inspectr will use the `channel`  to create subdomains on `in-spectr.dev` (notice the -)
-
-For example:
+Ensure your Ollama service is running locally. By default, Ollama runs on port `11434`:
 
 ```bash
-./inspectr --listen=":8080" --backend="http://localhost:3000" --expose --channel="your-channel-abc"
+ollama serve
 ```
 
-or by executing `./inspectr` with the configuration set in `.inspectr.yaml` file
+**Run Inspectr to Expose Ollama**
 
-```yaml
-listen: ":8080"
-backend: "http://localhost:3000"
-expose: true
-channel: "your-channel-abc"
-```
-
-Your service is now available on https://your-channel-abc.in-spectr.dev
+Execute Inspectr to securely expose your Ollama API externally:
 
 ```bash
-curl https://your-channel-abc.in-spectr.dev
+inspectr --listen=":8080" --backend="http://localhost:11434" --expose --channel="my-ollama-api"
 ```
 
-and locally on http://localhost:8080
+Your Ollama API is now publicly available at:
 
 ```bash
-curl http://localhost:8080
+https://my-ollama-api.in-spectr.dev
 ```
 
-This will:
+**Accessing the API Remotely**
 
-- Expose the proxy publicly via Inspectr Ingress (attempting to use the subdomain `your-channel-abc` on `https://in-spectr.dev`), forwarding requests to the
-  local Inspectr on `8080`.
-- The local Inspectr listens on port `8080` forward local and remote requests to the backend at http://localhost:30000.
-- Print the received requests in the terminal
-- Show the captured data real-time in Inspectr App in your browser   
+Now external services or team members can interact directly with your Ollama API remotely:
 
-## How It Works
+```bash
+curl https://my-ollama-api.in-spectr.dev/api/generate -d '{"model": "llama2", "prompt": "Hello, world!"}'
+```
 
-1. Proxy Mode:
-   
-   The proxy listens on the specified `--listen` address. If a backend is defined via `--backend`, it forwards the
-   incoming HTTP request to that backend and relays the response back to the client. If `--ingress` is enabled, the
-   proxy is exposed publicly via the Inspectr Ingress service.
+**Explanation:**
 
-2. Data Capture & Wrapping:
-   
-   All request and response details are captured into an Inspectr Operation data structure. This data is then wrapped in a
-   CloudEvents envelope.
+- `--listen=":8080"`: Sets Inspectr to listen on port `8080` locally.
 
-3. Embedded Inspectr App:
-   
-   The embedded Inspectr App server runs on the port specified by `--app-port` and serves the Inspectr UI for real‑time
-   updates.
+- `--backend="http://localhost:11434"`: Points Inspectr to your running Ollama API (default port is `11434`).
 
-4. Broadcasting & Logging:
-   
-      - If the `--print` flag is enabled, a color‑coded summary of each transaction is printed to the console.
-      - If the embedded app mode is enabled (`--app`), the data is also broadcast internally via SSE.
+- `--expose`: Activates public exposure of your Inspectr service via Inspectr Ingress.
 
+- `--channel="my-ollama-api"`: Defines a custom, easy-to-share subdomain.
+
+
+
+As soon as you stop your local Inspectr instance, your channel/subdomain and connection will be removed.
 
 ---
 
-## Configuration options
+# Configuration options
 
-### Command-Line Options
+## Command-Line Options
 
 | Flag             | Type    | Default   | Description                                                                                                                    |
-|------------------|---------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| ---------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `--listen`       | string  | `:8080`   | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`      | string  | `(empty)` | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--catch`        | boolean | `true`    | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
@@ -398,7 +450,7 @@ This will:
 | `--version`      | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
 | `--log-level`    | string  | `(empty)` | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
 
-### YAML Configuration File (.inspectr.yaml) Options  
+## YAML Configuration File (.inspectr.yaml) Options
 
 In addition to command-line flags, you can configure Inspectr using a YAML file. 
 
@@ -406,9 +458,8 @@ Create a file named `.inspectr.yaml` in your working directory or pass its path 
 command-line flags. Note: Any parameter provided via the command line will override the corresponding value in the YAML  
 file.  
 
-
 | Flag            | Type    | Default   | Description                                                                                                                    |
-|-----------------|---------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| --------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `--listen`      | string  | `:8080`   | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`     | string  | `(empty)` | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--catch`       | boolean | `true`    | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
@@ -422,7 +473,6 @@ file.
 | `--apiSecret`   | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
 | `--version`     | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
 | `--logLevel`    | string  | `(empty)` | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
-
 
 Here’s an example .inspectr.yaml:  
 
