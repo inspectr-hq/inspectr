@@ -3,7 +3,7 @@
   "version": "0.2.5",
   "description": "Inspectr - Capture and inspect HTTP requests/responses with a built-in Inspectr App.",
   "author": "Tim Haselaars",
-  "homepage": "https://github.com/inspectr-hq/inspectr#readme",
+  "homepage": "https://inspectr.dev",
   "bugs": "https://github.com/inspectr-hq/inspectr/issues",
   "repository": {
     "type": "git",

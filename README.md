@@ -213,7 +213,7 @@ curl http://localhost:8080/
 # Exposing Inspectr publicly with Inspect Ingress
 
 > Inspectr Ingress is a public ingress service, that lets you easily share local web services publicly. It assigns a unique
-> URL (like [https://your-channel-abc.in.inspectr.dev](https://your-channel-abc.in.inspectr.dev)) that forwards requests to your locally running server (
+> URL (like [https://your-channel-abc.in-spectr.dev](https://your-channel-abc.in-spectr.dev)) that forwards requests to your locally running server (
 > e.g., [http://localhost:3000](http://localhost:3000)), bypassing DNS and firewall hassles.
 
 ## Configuration
