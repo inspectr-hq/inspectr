@@ -398,6 +398,8 @@ Launch Inspectr in static mock mode with your OpenAPI specification:
 ./inspectr --listen=":8080" --mock-backend="./openapi.yaml"
 ```
 
+If you are looking for more advanced API mocking solutions, have a look at [Prism](https://stoplight.io/open-source/prism), [MockerServer.og](https://www.mocks-server.org/) or [Microcks](https://microcks.io/)
+
 ### **Explanation:**
 
 - Inspectr matches incoming requests against your OpenAPI specification (`openapi.yaml`) and provides mock responses based on the example(s) in OpenAPI.
