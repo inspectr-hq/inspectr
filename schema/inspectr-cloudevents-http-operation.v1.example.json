@@ -18,12 +18,21 @@
       "client_ip": "192.168.1.100",
       "http_version": "HTTP/1.1",
       "headers": [
-        { "name": "User-Agent", "value": "MyBrowser/1.0" },
-        { "name": "Content-Type", "value": "application/json" }
+        {
+          "name": "User-Agent",
+          "value": "MyBrowser/1.0"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
       ],
       "headers_size": 350,
-      "query_params":  [
-        { "name": "sort", "value": "asc" }
+      "query_params": [
+        {
+          "name": "sort",
+          "value": "asc"
+        }
       ],
       "cookies": [],
       "body": "{\"name\":\"Marco Polo\",\"email\":\"marco@polo-ventures.com\"}",
@@ -35,8 +44,14 @@
       "status_text": "Created",
       "http_version": "HTTP/1.1",
       "headers": [
-        { "name": "Content-Type", "value": "application/json" },
-        { "name": "Server", "value": "ExampleServer/1.0" }
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Server",
+          "value": "ExampleServer/1.0"
+        }
       ],
       "headers_size": 220,
       "cookies": [],
@@ -50,7 +65,19 @@
       "duration": 123
     },
     "meta": {
-      "proxy_instance": "inspectr-proxy-1"
+      "proxy_instance": "inspectr-proxy-1",
+      "ingress": {
+        "headers": [
+          {
+            "name": "Cf-Ipcountry",
+            "value": "BE"
+          },
+          {
+            "name": "X-Forwarded-Port",
+            "value": "443"
+          }
+        ]
+      }
     }
   }
 }

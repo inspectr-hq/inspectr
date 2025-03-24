@@ -38,6 +38,11 @@
       "type": "string",
       "description": "The channel of the event."
     },
+    "operation_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique Inspectr Operation identifier."
+    },
     "datacontenttype": {
       "type": "string",
       "enum": ["application/json"],
