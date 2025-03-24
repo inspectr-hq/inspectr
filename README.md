@@ -17,7 +17,7 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **API Proxy** - Forwards incoming requests to a configured backend service and returns the backend response.
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
-- **Public Exposure** - Expose your local API service, AI model or MCP server to be accessible for remote system, with the ability to define a secured, customizable subdomain.
+- **Public Exposure** - Expose your local API service, AI model or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
 - **Validation & Debugging** – Identify issues in request structures, missing parameters, and incorrect headers. View decoded JWT tokens for faster investigation.
 - **Easy integration** – Capture requests through a Proxy or as Express middleware.
 - **Lightweight & Fast** – Built for performance with minimal dependencies.
@@ -108,8 +108,8 @@ For front-end applications, you can simply replace your API endpoint URL with th
 to inspect & collect outgoing requests and their responses without any additional backend configuration. Combine the
 Proxy with your existing front-end workflow for a transparent debugging experience.
 
-- **Zero-config Integration** - Plug Inspectr into your front-end with only a base URL change. Works with any framework or HTTP client
-- **Transparent Debugging** - View outgoing requests and responses without modifying the backend
+- **Zero-config Integration** - Plug Inspectr into your front-end with only a base URL change. Works with any framework or HTTP client.
+- **Transparent Debugging** - View outgoing requests and responses without modifying the backend.
 - **Request History** – Easily track, search & filter past requests for analysis.
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
@@ -311,7 +311,7 @@ You would start your Inspectr as follows:
 
 ### Inspecting Webhook Events
 
-In this case you want to inspect webhook events sent from a third-party service. You may not have a backend service to forward the requests to—instead you simply want to capture and inspect the incoming webhook payloads. You can start Inspectr without a backend so that every incoming request receives a default 200 OK response while still capturing and broadcasting the webhook data:
+In this case, you want to inspect webhook events sent from a third-party service. You may not have a backend service to forward the requests to—instead you simply want to capture and inspect the incoming webhook payloads. You can start Inspectr without a backend so that every incoming request receives a default 200 OK response while still capturing and broadcasting the webhook data:
 
 ```bash
 ./inspectr --listen=":8080" --catch=true --expose=true
@@ -321,8 +321,8 @@ In this case you want to inspect webhook events sent from a third-party service.
 
 **Explanation:**
 
-- Via the remote Ingress Inspectr, a public URL is linked to the local Inspectr to be able receive remote webhook events.
-- The local Inspectr that is connected, immediately returns a 200 OK response for every incoming webhook event.
+- Via the remote Ingress Inspectr, a public URL is linked to the local Inspectr to be able to receive remote webhook events.
+- The local Inspectr, which is connected, immediately returns a 200 OK response for every incoming webhook event.
 - The webhook event payload details are captured and printed to the console.
 - The captured webhook event is sent to the Inspectr App. Visit http://localhost:40004 to see the webhook events in real time.
 
@@ -377,8 +377,7 @@ Configure Inspectr to forward requests to the API endpoints:
 ./inspectr --listen=":8080" --backend="https://api.example.com"  --expose=true
 ```
 
-This approach seamlessly integrates Inspectr into your front-end workflow, allowing you to monitor API interactions in
-real-time without modifying the backend.
+This approach seamlessly integrates Inspectr into your front-end workflow, allowing you to monitor API interactions in real-time without modifying the backend.
 
 ### Exposing Your Ollama API via Inspectr
 
@@ -424,8 +423,6 @@ curl https://my-ollama-api.in-spectr.dev/api/generate -d '{"model": "llama2", "p
 
 - `--channel="my-ollama-api"`: Defines a custom, easy-to-share subdomain.
 
-
-
 As soon as you stop your local Inspectr instance, your channel/subdomain and connection will be removed.
 
 ---
@@ -434,21 +431,23 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 
 ## Command-Line Options
 
-| Flag             | Type    | Default   | Description                                                                                                                    |
-| ---------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `--listen`       | string  | `:8080`   | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
-| `--backend`      | string  | `(empty)` | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
-| `--catch`        | boolean | `true`    | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
-| `--print`        | boolean | `true`    | Print a color‑coded summary of each request/response to the console.                                                           |
-| `--app`          | boolean | `true`    | Start/stops the embedded Inspectr App UI & API.                                                                                |
-| `--app-port`     | string  | `4004`    | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
-| `--expose`       | boolean | `false`   | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
-| `--channel`      | string  | ``        | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
-| `--channel-code` | string  | ``        | Configure the Security code required to access your Ingress channel.                                                           |
-| `--config`       | string  | `(empty)` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
-| `--apiSecret`    | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
-| `--version`      | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
-| `--log-level`    | string  | `(empty)` | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
+| Flag                | Type    | Default   | Description                                                                                                                    |
+|---------------------|---------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| `--listen`          | string  | `:8080`   | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
+| `--backend`         | string  | `(empty)` | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
+| `--catch`           | boolean | `true`    | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
+| `--print`           | boolean | `true`    | Print a color‑coded summary of each request/response to the console.                                                           |
+| `--app`             | boolean | `true`    | Start/stops the embedded Inspectr App UI & API.                                                                                |
+| `--app-port`        | string  | `4004`    | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
+| `--expose`          | boolean | `false`   | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
+| `--channel`         | string  | ``        | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
+| `--channel-code`    | string  | ``        | Configure the Security code required to access your Ingress channel.                                                           |
+| `--config`          | string  | `(empty)` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
+| `--store-path`      | string  | `(empty)` | Optional to the operations data store.                                                                                         |
+| `--store-in-memory` | string  | `(empty)` | Store operations in‑memory instead of disk. On restart the operations will be reset.                                           |
+| `--apiSecret`       | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
+| `--version`         | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
+| `--log-level`       | string  | `none`    | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
 
 ## YAML Configuration File (.inspectr.yaml) Options
 
@@ -458,21 +457,24 @@ Create a file named `.inspectr.yaml` in your working directory or pass its path 
 command-line flags. Note: Any parameter provided via the command line will override the corresponding value in the YAML  
 file.  
 
-| Flag            | Type    | Default   | Description                                                                                                                    |
-| --------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `--listen`      | string  | `:8080`   | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
-| `--backend`     | string  | `(empty)` | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
-| `--catch`       | boolean | `true`    | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
-| `--print`       | boolean | `true`    | Print a color‑coded summary of each request/response to the console.                                                           |
-| `--app`         | boolean | `true`    | Start/stops the embedded Inspectr App UI & API.                                                                                |
-| `--appPort`     | string  | `4004`    | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
-| `--expose`      | boolean | `false`   | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
-| `--channel`     | string  | ``        | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
-| `--channelCode` | string  | ``        | Configure the Security code required to access your Ingress channel.                                                           |
-| `--config`      | string  | `(empty)` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
-| `--apiSecret`   | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
-| `--version`     | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
-| `--logLevel`    | string  | `(empty)` | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
+| Flag              | Type    | Default   | Description                                                                                                                    |
+|-------------------|---------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| `--listen`        | string  | `:8080`   | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
+| `--backend`       | string  | `(empty)` | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
+| `--catch`         | boolean | `true`    | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
+| `--print`         | boolean | `true`    | Print a color‑coded summary of each request/response to the console.                                                           |
+| `--app`           | boolean | `true`    | Start/stops the embedded Inspectr App UI & API.                                                                                |
+| `--appPort`       | string  | `4004`    | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
+| `--expose`        | boolean | `false`   | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
+| `--channel`       | string  | ``        | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
+| `--channelCode`   | string  | ``        | Configure the Security code required to access your Ingress channel.                                                           |
+| `--config`        | string  | `(empty)` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
+| `--config`        | string  | `(empty)` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
+| `--storePath`     | string  | `(empty)` | Optional to the operations data store.                                                                                         |
+| `--storeInMemory` | string  | `(empty)` | Store operations in‑memory instead of disk. On restart the operations will be reset.                                           |
+| `--apiSecret`     | string  | `(empty)` | Configure the API secret to secure your Inspectr administration API.                                                           |
+| `--version`       | string  | `(empty)` | Returns the version of Inspectr.                                                                                               |
+| `--logLevel`      | string  | `none`    | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
 
 Here’s an example .inspectr.yaml:  
 
