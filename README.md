@@ -480,6 +480,7 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 | `--listen`          | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`         | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--mock-backend`    | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
+| `--mock-dynamic`    | boolean | `false`          | Enable dynamic mode for the mock backend.                                                                                      |
 | `--catch`           | boolean | `true`           | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
 | `--print`           | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
 | `--app`             | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
@@ -492,7 +493,13 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 | `--store-in-memory` | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
 | `--apiSecret`       | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
 | `--version`         | string  |                  | Returns the version of Inspectr.                                                                                               |
-| `--log-level`       | string  | `none`           | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
+
+Technical settings
+
+| Flag                   | Type    | Default | Description                                                                                                                                      |
+|------------------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--http-timeout`       | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend.                                                       |
+| `--log-level`          | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                                         |
 
 ## YAML Configuration File (.inspectr.yaml) Options
 
@@ -507,6 +514,7 @@ file.
 | `--listen`        | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`       | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--mockBackend`   | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
+| `--mockDynamic`   | boolean | `false`          | Enable dynamic mode for the mock backend.                                                                                      |
 | `--catch`         | boolean | `true`           | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
 | `--print`         | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
 | `--app`           | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
@@ -519,9 +527,15 @@ file.
 | `--storeInMemory` | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
 | `--apiSecret`     | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
 | `--version`       | string  |                  | Returns the version of Inspectr.                                                                                               |
-| `--logLevel`      | string  | `none`           | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
 
-Here’s an example .inspectr.yaml:  
+Technical settings
+
+| Flag                  | Type    | Default | Description                                                                                                                                      |
+|-----------------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--httpTimeout`       | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend.                                                       |
+| `--logLevel`          | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                                         |
+
+Here’s an example .inspectr.yaml:    
 
 ```yaml
 listen: ":8080" # Port where Inspectr listens 
