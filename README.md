@@ -24,7 +24,27 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 
 ## 🚀 Quick Start
 
-Install via brew or npm:
+### 1. Run immediately with `npx`
+
+No installation needed — just run:
+
+```bash
+npx @inspectr/inspectr --backend=http://localhost:3000
+```
+
+Visit the UI at [http://localhost:4004](http://localhost:4004).
+
+Make your request to your backend through Inspectr:
+
+```bash
+curl http://localhost:8080/
+```
+
+---
+
+### 2. Install locally via Brew or NPM
+
+Install Inspectr:
 
 ```bash
 brew tap inspectr-hq/inspectr
@@ -37,15 +57,15 @@ or
 npm install -g @inspectr/inspectr
 ```
 
-Run Inspectr:
+Then run:
 
 ```bash
 inspectr --listen=:8080 --backend=http://localhost:3000
 ```
 
-Visit the UI: http://localhost:4004
+Visit the UI at [http://localhost:4004](http://localhost:4004).
 
-Make your request to your backend 
+Make your request:
 
 ```bash
 curl http://localhost:8080/
