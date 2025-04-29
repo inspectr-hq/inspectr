@@ -14,7 +14,7 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 
 - **Inspect API Requests** – View headers, query parameters, request bodies, and response details.
 - **Analyze Webhook Events** – Capture and review webhook payloads from third-party services.
-- **API Proxy** - Forwards incoming requests to a configured backend service and returns the backend response.
+- **API Proxy** - Forward incoming requests to a configured backend service and returns the backend response.
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
 - **Public Exposure** - Expose your local API service, AI model or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
@@ -57,15 +57,15 @@ or
 npm install -g @inspectr/inspectr
 ```
 
-Then run:
+Run Inspectr:
 
 ```bash
-inspectr --listen=:8080 --backend=http://localhost:3000
+inspectr --backend=http://localhost:3000
 ```
 
 Visit the UI at [http://localhost:4004](http://localhost:4004).
 
-Make your request:
+Make your request to your backend 
 
 ```bash
 curl http://localhost:8080/
@@ -467,7 +467,13 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 | `--store-in-memory` | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
 | `--apiSecret`       | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
 | `--version`         | string  |                  | Returns the version of Inspectr.                                                                                               |
-| `--log-level`       | string  | `none`           | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
+
+Technical settings
+
+| Flag                   | Type    | Default | Description                                                                                                                                      |
+|------------------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--http-timeout`       | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend.                                                       |
+| `--log-level`          | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                                         |
 
 ## YAML Configuration File (.inspectr.yaml) Options
 
@@ -493,7 +499,13 @@ file.
 | `--storeInMemory` | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
 | `--apiSecret`     | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
 | `--version`       | string  |                  | Returns the version of Inspectr.                                                                                               |
-| `--logLevel`      | string  | `none`           | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                       |
+
+Technical settings
+
+| Flag                  | Type    | Default | Description                                                                                                                                      |
+|-----------------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--httpTimeout`       | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend.                                                       |
+| `--logLevel`          | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                                         |
 
 Here’s an example .inspectr.yaml:  
 
