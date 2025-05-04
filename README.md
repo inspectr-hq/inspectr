@@ -62,7 +62,7 @@ npm install -g @inspectr/inspectr
 Run Inspectr:
 
 ```bash
-inspectr --listen=:8080 --backend=http://localhost:3000
+inspectr --backend=http://localhost:3000
 ```
 
 Visit the UI at [http://localhost:4004](http://localhost:4004).
