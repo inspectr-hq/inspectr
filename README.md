@@ -461,11 +461,13 @@ Here’s how you can use these headers:
 
 #### **Example usage :**
 
-`curl -X GET http://localhost:8080/api/items \   
+```bash
+curl -X GET http://localhost:8080/api/items \   
 -H "inspectr-response-status: 503" \   
 -H "inspectr-response-delay: 2000" \   
 -H "inspectr-response-content-type: application/json" \   
--H "inspectr-response-example: errorExample"`
+-H "inspectr-response-example: errorExample"
+```
 
 ### **Explanation:**
 
