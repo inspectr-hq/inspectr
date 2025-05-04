@@ -17,8 +17,9 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **API Proxy** - Forward incoming requests to a configured backend service and returns the backend response.
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
-- **Public Exposure** - Expose your local API service, AI model or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
+- **Public Exposure** - Expose your local API service, AI model, or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
 - **Mock Backend** - Create a mocked service based on an OpenAPI specification for testing and development.
+- **Response Overrides** - Simulate API behavior by setting special `inspectr-` headers to control response status codes, delays, content types, and example payloads.  
 - **Validation & Debugging** – Identify issues in request structures, missing parameters, and incorrect headers. View decoded JWT tokens for faster investigation.
 - **Easy integration** – Capture requests through a Proxy or as Express middleware.
 - **Lightweight & Fast** – Built for performance with minimal dependencies.
@@ -138,14 +139,14 @@ Proxy with your existing front-end workflow for a transparent debugging experien
 Have a look at the [Inspectr](https://github.com/inspectr-hq/inspectr?tab=readme-ov-file#inspecting-front-end-api-requests) documentation to see how easy it is to use
 it in your front-end application.
 
-### Mock responses
+### Mock & Override responses
 
-Inspectr Proxy includes a powerful mock mode that allows you to create a mock backend service based on an OpenAPI specification. This is particularly useful for:
+Inspectr Proxy includes a powerful mock mode and response override controls, allowing you to simulate backend behavior using an OpenAPI specification. This is especially useful for:
 
 - **API Development**: Test your frontend against a mock API before the real backend is ready
-- **API Testing**: Validate client behavior against different API responses
+- **API Testing**: Simulate various response scenarios to validate client behavior
 - **Demos and Presentations**: Create reliable demos without depending on external services
-- **Offline Development**: Work on your application without requiring access to the actual backend
+- **Offline Development**: Work on your application without needing access to the actual backend
 
 # Components
 
@@ -443,6 +444,42 @@ If needed, you can also combine mock mode with exposing the mocked API publicly:
 ./inspectr --listen=":8080" --mock-backend="./openapi.yaml" --expose=true
 ```
 
+### Overriding API Responses
+
+Inspectr supports **response overrides**, allowing you to control how requests are responded during **mock** or **catch** mode using custom headers. This is useful for testing client behavior against simulated scenarios like timeouts, error responses, or simulating non-expected status codes.
+
+By adding special `inspectr-` headers to your request, you can manipulate how Inspectr responds—regardless of what’s defined in the OpenAPI spec or what the backend returns.
+
+Here’s how you can use these headers:
+
+| Header                           | Description                                                                | Supported modes                |
+| -------------------------------- | -------------------------------------------------------------------------- |--------------------------------|
+| `inspectr-response-delay`        | Introduce artificial delay in milliseconds (e.g. `2000`)                   | - catch<br/>- mock<br/>- proxy |
+| `inspectr-response-status`       | Override the HTTP status code (e.g. `503`, `404`)                          | - catch<br/>- mock             |
+| `inspectr-response-content-type` | Set a custom `Content-Type` (e.g. `application/xml`)                       | - catch<br/>- mock             |
+| `inspectr-response-example`      | Force a specific OpenAPI response example to be used (e.g. `errorExample`) | - mock                         |
+
+#### **Example usage :**
+
+`curl -X GET http://localhost:8080/api/items \   
+-H "inspectr-response-status: 503" \   
+-H "inspectr-response-delay: 2000" \   
+-H "inspectr-response-content-type: application/json" \   
+-H "inspectr-response-example: errorExample"`
+
+### **Explanation:**
+
+- These headers let you simulate slow networks, unexpected status codes, or non-default examples.
+
+- In **mock mode**, the override headers modify the mock response generated from the OpenAPI spec.
+
+- In **catch mode**, the override headers modify response returned from the generic catch response.
+
+- All overridden responses are logged and shown in the Inspectr App (`http://localhost:4004`).
+
+> [!TIP]  
+> Combine mock and override to simulate full API behavior — including edge cases — without writing any backend logic.
+
 ### Exposing Your Ollama API via Inspectr
 
 When developing and experimenting with local AI services like [Ollama](https://ollama.com/), you often need a quick way to expose your local model to external services, integrations, or collaborators. Inspectr simplifies this task, securely forwarding requests to your Ollama API without complicated network configurations or firewall changes.
@@ -496,7 +533,7 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 ## Command-Line Options
 
 | Flag                | Type    | Default          | Description                                                                                                                    |
-|---------------------|---------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `--listen`          | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`         | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--mock-backend`    | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
@@ -516,10 +553,10 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 
 Technical settings
 
-| Flag                   | Type    | Default | Description                                                                                                                                      |
-|------------------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--http-timeout`       | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend.                                                       |
-| `--log-level`          | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                                         |
+| Flag             | Type    | Default | Description                                                                                |
+| ---------------- | ------- | ------- | ------------------------------------------------------------------------------------------ |
+| `--http-timeout` | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend. |
+| `--log-level`    | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                   |
 
 ## YAML Configuration File (.inspectr.yaml) Options
 
@@ -530,7 +567,7 @@ command-line flags. Note: Any parameter provided via the command line will overr
 file.  
 
 | Flag              | Type    | Default          | Description                                                                                                                    |
-|-------------------|---------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| ----------------- | ------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `--listen`        | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`       | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--mockBackend`   | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
@@ -550,10 +587,10 @@ file.
 
 Technical settings
 
-| Flag                  | Type    | Default | Description                                                                                                                                      |
-|-----------------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--httpTimeout`       | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend.                                                       |
-| `--logLevel`          | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                                                                         |
+| Flag            | Type    | Default | Description                                                                                |
+| --------------- | ------- | ------- | ------------------------------------------------------------------------------------------ |
+| `--httpTimeout` | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend. |
+| `--logLevel`    | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                   |
 
 Here’s an example .inspectr.yaml:  
 
