@@ -535,7 +535,7 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 ## Command-Line Options
 
 | Flag                | Type    | Default          | Description                                                                                                                    |
-| ------------------- | ------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+|---------------------|---------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `--listen`          | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`         | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--mock-backend`    | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
@@ -544,6 +544,7 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 | `--print`           | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
 | `--app`             | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
 | `--app-port`        | string  | `4004`           | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
+| `--cors`            | boolean | `true`           | Enable CORS support, allowing preflight OPTIONS and adding CORS headers.                                                       |
 | `--expose`          | boolean | `false`          | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
 | `--channel`         | string  | ``               | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
 | `--channel-code`    | string  | ``               | Configure the Security code required to access your Ingress channel.                                                           |
@@ -569,7 +570,7 @@ command-line flags. Note: Any parameter provided via the command line will overr
 file.  
 
 | Flag              | Type    | Default          | Description                                                                                                                    |
-| ----------------- | ------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+|-------------------|---------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `--listen`        | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
 | `--backend`       | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
 | `--mockBackend`   | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
@@ -578,6 +579,7 @@ file.
 | `--print`         | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
 | `--app`           | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
 | `--appPort`       | string  | `4004`           | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
+| `--cors`          | boolean | `true`           | Enable CORS support, allowing preflight OPTIONS and adding CORS headers.                                                       |
 | `--expose`        | boolean | `false`          | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
 | `--channel`       | string  | ``               | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
 | `--channelCode`   | string  | ``               | Configure the Security code required to access your Ingress channel.                                                           |
