@@ -544,7 +544,7 @@ As soon as you stop your local Inspectr instance, your channel/subdomain and con
 | `--print`           | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
 | `--app`             | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
 | `--app-port`        | string  | `4004`           | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
-| `--cors`            | boolean | `true`           | Enable CORS support, allowing preflight OPTIONS and adding CORS headers.                                                       |
+| `--backend-cors`    | boolean | `false`          | Enable backend CORS to handle CORS by the backend. By Default, Inspectr handles preflight requests with permissive headers.    |
 | `--expose`          | boolean | `false`          | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
 | `--channel`         | string  | ``               | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
 | `--channel-code`    | string  | ``               | Configure the Security code required to access your Ingress channel.                                                           |
@@ -579,7 +579,7 @@ file.
 | `--print`         | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
 | `--app`           | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
 | `--appPort`       | string  | `4004`           | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
-| `--cors`          | boolean | `true`           | Enable CORS support, allowing preflight OPTIONS and adding CORS headers.                                                       |
+| `--backendCors`   | boolean | `false`          | Enable backend CORS to handle CORS by the backend. By Default, Inspectr handles preflight requests with permissive headers.    |
 | `--expose`        | boolean | `false`          | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
 | `--channel`       | string  | ``               | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
 | `--channelCode`   | string  | ``               | Configure the Security code required to access your Ingress channel.                                                           |
