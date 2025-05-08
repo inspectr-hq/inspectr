@@ -4,7 +4,8 @@
   "type": "dev.inspectr.operation.http.v1.completed",
   "time": "2025-02-14T17:57:35.436Z",
   "source": "//ingress.inspectr.dev/TOPIC_NAME",
-  "channel": "",
+  "channel": "hello-world",
+  "operation_id": "1234567",
   "datacontenttype": "application/json",
   "data": {
     "version": "1.0",
