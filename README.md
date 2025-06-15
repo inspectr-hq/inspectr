@@ -47,7 +47,7 @@ Make your request to your backend through Inspectr:
 curl http://localhost:8080/
 ```
 
-Review the [Quick Start guide](https://inspectr.dev/docs/getting-started/quick-start/v) for more info.
+Review the [Quick Start guide](https://inspectr.dev/docs/getting-started/quick-start/) for more info.
 
 ## 🎯 Use Cases
 
@@ -83,7 +83,7 @@ When developing locally, you often need to test integrations or share your local
 
 - **Collaboration-Friendly** – Quickly share your endpoint with colleagues, stakeholders, or external systems to streamline feedback and testing cycles.
 
-Check out the [Inspectr documentation about using Expose](https://inspectr.dev/docs/guides/exposing-publicly/) to learn how simple it is to securely expose your local environment to the world.
+Check out the guide on [Exposing Services Publicly](https://inspectr.dev/docs/guides/exposing-publicly/) in the Inspectr documentation to learn how simple it is to securely expose your local environment to the world.
 
 ### Webhook Capturing Service
 
