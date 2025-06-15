@@ -2,6 +2,9 @@
 
 > Inspectr – Simplifying API and Webhook debugging!
 
+<a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
+<a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
+
 **Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests and webhook events. 
 
 Useful for testing integrations, monitoring incoming requests, reviewing past requests, or troubleshooting payload issues, Inspectr provides the insights you need.
@@ -24,9 +27,11 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **Easy integration** – Capture requests through a Proxy or as Express middleware.
 - **Lightweight & Fast** – Built for performance with minimal dependencies.
 
+Visit the website [https://inspectr.dev](https://inspectr.dev) for more info.
+
 ## 🚀 Quick Start
 
-### 1. Run immediately with `npx`
+### Launch Inspectr
 
 No installation needed — just run:
 
@@ -42,36 +47,7 @@ Make your request to your backend through Inspectr:
 curl http://localhost:8080/
 ```
 
----
-
-### 2. Install locally via Brew or NPM
-
-Install Inspectr:
-
-```bash
-brew tap inspectr-hq/inspectr
-brew install inspectr
-```
-
-or
-
-```bash
-npm install -g @inspectr/inspectr
-```
-
-Run Inspectr:
-
-```bash
-inspectr --backend=http://localhost:3000
-```
-
-Visit the UI at [http://localhost:4004](http://localhost:4004).
-
-Make your request to your backend 
-
-```bash
-curl http://localhost:8080/
-```
+Review the [Quick Start guide](https://inspectr.dev/docs/getting-started/quick-start/v) for more info.
 
 ## 🎯 Use Cases
 
@@ -91,8 +67,7 @@ endpoints. The Inspectr App allows you to:
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-console.png" alt="Console Inspectr" width="80%">
 
-Read the article [how to capture and debug API requests](https://github.com/inspectr-hq/inspectr?tab=readme-ov-file#inspecting-api-http-traffic)
-with [Inspectr](https://github.com/inspectr-hq/inspectr) and inspect all the details in the Inspectr viewer.
+Read the article [how to capture and debug API requests](https://inspectr.dev/docs/guides/api-traffic-debugging/) for all the details.
 
 ### Public Exposure of Local Services
 
@@ -108,7 +83,7 @@ When developing locally, you often need to test integrations or share your local
 
 - **Collaboration-Friendly** – Quickly share your endpoint with colleagues, stakeholders, or external systems to streamline feedback and testing cycles.
 
-Check out the [Inspectr documentation](https://github.com/inspectr-hq/inspectr?tab=readme-ov-file#exposing-local-services-publicly) to learn how simple it is to securely expose your local environment to the world.
+Check out the [Inspectr documentation about using Expose](https://inspectr.dev/docs/guides/exposing-publicly/) to learn how simple it is to securely expose your local environment to the world.
 
 ### Webhook Capturing Service
 
@@ -121,8 +96,8 @@ When building applications that rely on webhooks or external callbacks, manually
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-webhook.png" alt="Request Inspectr" width="80%">
 
-Read the "[Inspecting Webhook Events](https://github.com/inspectr-hq/inspectr?tab=readme-ov-file#inspecting-webhook-events)"
-article which explains how to use the [Inspectr](https://github.com/inspectr-hq/inspectr) to create a public webhook endpoint that catches all webhook events.
+Read the "[Inspecting Webhook Events](https://inspectr.dev/docs/guides/webhook-debugging/)"
+article which explains how to use Inspectr to create a public webhook endpoint that catches all webhook events.
 
 ### Easy Front-end Request Inspection
 
@@ -136,7 +111,7 @@ Proxy with your existing front-end workflow for a transparent debugging experien
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
 
-Have a look at the [Inspectr](https://github.com/inspectr-hq/inspectr?tab=readme-ov-file#inspecting-front-end-api-requests) documentation to see how easy it is to use
+Have a look at the [Inspectr documentation](https://inspectr.dev/docs/guides/frontend-inspection/) to see how easy it is to use
 it in your front-end application.
 
 ### Mock & Override responses
@@ -148,32 +123,7 @@ Inspectr Proxy includes a powerful mock mode and response override controls, all
 - **Demos and Presentations**: Create reliable demos without depending on external services
 - **Offline Development**: Work on your application without needing access to the actual backend
 
-# Components
-
-Inspectr provides multiple components, that can be used in different ways, depending on your use case:
-
-## 🔌 Request capturing
-
-### 🔹 Proxy Inspectr
-
-Run **Inspectr** locally as an **HTTP API proxy** to intercept and log traffic between your frontend and backend services. Great for local debugging and development.
-
-### 🔹 Ingress Inspectr
-
-**Expose** your **local API** or **AI service** securely to external systems through the hosted **Ingress Inspectr** service, enabling real-world integrations and testing without complex network configurations.
-
-Your local running service can be exposed to the public internet via a private endpoint, without the need to deploy your service externally. The ingress is a pure forwarding service that delivers the remote requests to your local Inspectr setup.
-
-## 🔍 Request inspections
-
-### 🔹 Standalone App
-
-Run **Inspectr** as an standalone application that can be deployed in various environments:
-
-- **Localhost** – Self-hosted for debugging API requests or webhook events directly on your machine. Comes with the Proxy Inspectr.
-- **Vercel** – Cloud-hosted for easy access and seamless integration.
-
-More info can be found in the [Inspectr App](https://github.com/inspectr-hq/inspectr-app) repository.
+In the guides [Mocking API Responses](https://inspectr.dev/docs/guides/mocking/) and [Response Overrides](https://inspectr.dev/docs/guides/response-override/), we explain step by step how to setup a mock API.
 
 # 🚀 Get started
 
@@ -481,52 +431,6 @@ curl -X GET http://localhost:8080/api/items \
 
 > [!TIP]  
 > Combine mock and override to simulate full API behavior — including edge cases — without writing any backend logic.
-
-### Exposing Your Ollama API via Inspectr
-
-When developing and experimenting with local AI services like [Ollama](https://ollama.com/), you often need a quick way to expose your local model to external services, integrations, or collaborators. Inspectr simplifies this task, securely forwarding requests to your Ollama API without complicated network configurations or firewall changes.
-
-**Start Your Ollama Server**
-
-Ensure your Ollama service is running locally. By default, Ollama runs on port `11434`:
-
-```bash
-ollama serve
-```
-
-**Run Inspectr to Expose Ollama**
-
-Execute Inspectr to securely expose your Ollama API externally:
-
-```bash
-inspectr --listen=":8080" --backend="http://localhost:11434" --expose --channel="my-ollama-api"
-```
-
-Your Ollama API is now publicly available at:
-
-```bash
-https://my-ollama-api.in-spectr.dev
-```
-
-**Accessing the API Remotely**
-
-Now external services or team members can interact directly with your Ollama API remotely:
-
-```bash
-curl https://my-ollama-api.in-spectr.dev/api/generate -d '{"model": "llama2", "prompt": "Hello, world!"}'
-```
-
-**Explanation:**
-
-- `--listen=":8080"`: Sets Inspectr to listen on port `8080` locally.
-
-- `--backend="http://localhost:11434"`: Points Inspectr to your running Ollama API (default port is `11434`).
-
-- `--expose`: Activates public exposure of your Inspectr service via Inspectr Ingress.
-
-- `--channel="my-ollama-api"`: Defines a custom, easy-to-share subdomain.
-
-As soon as you stop your local Inspectr instance, your channel/subdomain and connection will be removed.
 
 ---
 
