@@ -487,15 +487,15 @@ curl -X GET http://localhost:8080/api/items \
 | `--store-path`      | string  | `.inspectr.db`   | Optional path to the local Inspectr operations data store.                                                                     |
 | `--store-in-memory` | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
 | `--apiSecret`       | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
-| `--auth-enabled`    | boolean | `false`          | Enable API key authentication for proxied requests |
-| `--auth-secret`     | string  | `(none)`         | Guard secret used to generate API keys |
-| `--auth-token-ttl`  | integer | `24`             | Guard token expiration time in hours |
+| `--auth-enabled`    | boolean | `false`          | Enable API key authentication for proxied requests                                                                             |
+| `--auth-secret`     | string  | `(none)`         | Guard secret used to generate API keys                                                                                         |
+| `--auth-token-ttl`  | integer | `24`             | Guard token expiration time in hours                                                                                           |
 | `--version`         | string  |                  | Returns the version of Inspectr.                                                                                               |
 
 Technical settings
 
 | Flag             | Type    | Default | Description                                                                                |
-| ---------------- | ------- | ------- | ------------------------------------------------------------------------------------------ |
+|------------------|---------|---------|--------------------------------------------------------------------------------------------|
 | `--http-timeout` | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend. |
 | `--log-level`    | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                   |
 
@@ -507,33 +507,33 @@ Create a file named `.inspectr.yaml` in your working directory or pass its path 
 command-line flags. Note: Any parameter provided via the command line will override the corresponding value in the YAML  
 file.  
 
-| Flag              | Type    | Default          | Description                                                                                                                    |
-|-------------------|---------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `--listen`        | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
-| `--backend`       | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
-| `--mockBackend`   | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
-| `--mockDynamic`   | boolean | `false`          | Enable dynamic mode for the mock backend.                                                                                      |
-| `--catch`         | boolean | `true`           | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
-| `--print`         | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
-| `--app`           | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
-| `--appPort`       | string  | `4004`           | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
-| `--backendCors`   | boolean | `false`          | Enable backend CORS to handle CORS by the backend. By Default, Inspectr handles preflight requests with permissive headers.    |
-| `--expose`        | boolean | `false`          | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
-| `--channel`       | string  | ``               | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
-| `--channelCode`   | string  | ``               | Configure the Security code required to access your Ingress channel.                                                           |
-| `--config`        | string  | `.inspectr.yaml` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
-| `--storePath`     | string  | `.inspectr.db`   | Optional path to the local Inspectr operations data store.                                                                     |
-| `--storeInMemory` | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
-| `--apiSecret`     | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
-| `--auth-enabled`    | boolean | `false`          | Enable API key authentication for proxied requests |
-| `--auth-secret`     | string  | `(none)`         | Guard secret used to generate API keys |
-| `--auth-token-ttl`  | integer | `24`             | Guard token expiration time in hours |
-| `--version`       | string  |                  | Returns the version of Inspectr.                                                                                               |
+| Flag               | Type    | Default          | Description                                                                                                                    |
+|--------------------|---------|------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `--listen`         | string  | `:8080`          | Address (port) on which the Inspectr proxy listens for incoming HTTP requests.                                                 |
+| `--backend`        | string  | `(empty)`        | Backend service address (e.g. "http://localhost:3000"). If empty, the proxy returns a default 200 OK response.                 |
+| `--mockBackend`    | string  | `(empty)`        | Path to an OpenAPI specification file to mock a backend based on the OpenAPI definition.                                       |
+| `--mockDynamic`    | boolean | `false`          | Enable dynamic mode for the mock backend.                                                                                      |
+| `--catch`          | boolean | `true`           | Enable catch mode (returns 200 OK) if no backend is configured.                                                                |
+| `--print`          | boolean | `true`           | Print a color‑coded summary of each request/response to the console.                                                           |
+| `--app`            | boolean | `true`           | Start/stops the embedded Inspectr App UI & API.                                                                                |
+| `--appPort`        | string  | `4004`           | Port on which the Inspectr App UI runs when `--app` is enabled.                                                                |
+| `--backendCors`    | boolean | `false`          | Enable backend CORS to handle CORS by the backend. By Default, Inspectr handles preflight requests with permissive headers.    |
+| `--expose`         | boolean | `false`          | Enable public access to your local Inspectr proxy via Inspectr Ingress.                                                        |
+| `--channel`        | string  | ``               | Preferred channel name to be used as a subdomain on the Inspectr Ingress.                                                      |
+| `--channelCode`    | string  | ``               | Configure the Security code required to access your Ingress channel.                                                           |
+| `--config`         | string  | `.inspectr.yaml` | Optional path to a Inspectr YAML configuration file. If omitted, a file named .inspectr.yaml will be auto-detected if present. |
+| `--storePath`      | string  | `.inspectr.db`   | Optional path to the local Inspectr operations data store.                                                                     |
+| `--storeInMemory`  | string  | `false`          | Store Inspectr operations in‑memory instead of disk. On restart the operation history will be reset.                           |
+| `--apiSecret`      | string  | `(empty)`        | Configure the API secret to secure your Inspectr administration API.                                                           |
+| `--auth-enabled`   | boolean | `false`          | Enable API key authentication for proxied requests                                                                             |
+| `--auth-secret`    | string  | `(none)`         | Guard secret used to generate API keys                                                                                         |
+| `--auth-token-ttl` | integer | `24`             | Guard token expiration time in hours                                                                                           |
+| `--version`        | string  |                  | Returns the version of Inspectr.                                                                                               |
 
 Technical settings
 
 | Flag            | Type    | Default | Description                                                                                |
-| --------------- | ------- | ------- | ------------------------------------------------------------------------------------------ |
+|-----------------|---------|---------|--------------------------------------------------------------------------------------------|
 | `--httpTimeout` | integer | `30`    | Set the HTTP connection time-out in seconds, used when forwarding requests to the backend. |
 | `--logLevel`    | string  | `none`  | Set the desired log level (none, debug, info, warn, error, fatal, panic)                   |
 
