@@ -25,7 +25,7 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **Guard Authentication** - Protect local services with API key authentication.
 - **Response Overrides** - Simulate API behavior by setting special `inspectr-` headers to control response status codes, delays, content types, and example payloads.
 - **Validation & Debugging** – Identify issues in request structures, missing parameters, and incorrect headers. View decoded JWT tokens for faster investigation.
-- **Easy integration** – Capture requests through a Proxy or as Express middleware.
+- **Easy integration** – Capture requests and webhooks through a Proxy.
 - **Lightweight & Fast** – Built for performance with minimal dependencies.
 
 Visit the website [https://inspectr.dev](https://inspectr.dev) for more info.
@@ -187,6 +187,15 @@ brew install inspectr
 **Download Pre-compiled Binaries**
 
 Download the [latest binaries](https://github.com/inspectr-hq/inspectr/releases) from the [Releases](https://github.com/inspectr-hq/inspectr/releases) page.
+
+**Docker**
+
+Run Inspectr as a container using images hosted on [GitHub Container Registry](https://ghcr.io/inspectr-hq/inspectr:latest):
+
+```bash
+docker pull ghcr.io/inspectr-hq/inspectr:latest
+docker run --rm -p 4004:4004 -p 8080:8080 inspectr
+```
 
 ## Start Inspectr
 
