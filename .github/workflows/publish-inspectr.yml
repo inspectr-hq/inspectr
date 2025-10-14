@@ -1,9 +1,16 @@
 name: Publish Inspectr Docker image
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Image tag to publish (e.g. 1.4.0 or my-feature)'
+        required: true
+      latest:
+        description: 'Also tag as latest'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   publish:
@@ -12,6 +19,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,12 +42,16 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=ref,event=tag
-            type=ref,event=branch
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=raw,value=latest,enable={{is_default_branch}}
+          # no auto tags here—labels only
+
+      - name: Compute image tags
+        id: tags
+        run: |
+          TAGS="ghcr.io/${{ github.repository }}:${{ inputs.tag }}"
+          if [ "${{ inputs.latest }}" = "true" ]; then
+            TAGS="$TAGS,ghcr.io/${{ github.repository }}:latest"
+          fi
+          echo "tags=$TAGS" >> "$GITHUB_OUTPUT"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -49,4 +61,4 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.tags.outputs.tags }}
