@@ -1,0 +1,8 @@
+# Ignore files not needed for Docker build context
+.git
+node_modules
+npm-debug.log*
+.dockerignore
+assets
+schema
+bin
