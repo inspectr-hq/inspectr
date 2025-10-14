@@ -31,4 +31,3 @@ VOLUME ["/data"]
 EXPOSE 4004 8080
 
 ENTRYPOINT ["inspectr"]
-CMD ["--help"]
