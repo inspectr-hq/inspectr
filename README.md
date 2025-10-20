@@ -5,7 +5,7 @@
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
 
-**Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests and webhook events. 
+**Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests and webhook events, complete with a built-in tunnel/expose option for sharing local services.
 
 Useful for testing integrations, monitoring incoming requests, reviewing past requests, or troubleshooting payload issues, Inspectr provides the insights you need.
 
@@ -20,7 +20,7 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **API Proxy** - Forward incoming requests to a configured backend service and returns the backend response.
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
-- **Public Exposure** - Expose your local API service, AI model, or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
+- **Public Exposure** - Expose or tunnel your local API service, AI model, or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
 - **Mock Backend** - Create a mocked service based on an OpenAPI specification for testing and development.
 - **Guard Authentication** - Protect local services with API key authentication.
 - **Response Overrides** - Simulate API behavior by setting special `inspectr-` headers to control response status codes, delays, content types, and example payloads.
@@ -72,13 +72,13 @@ Read the article [how to capture and debug API requests](https://inspectr.dev/do
 
 ### Public Exposure of Local Services
 
-When developing locally, you often need to test integrations or share your local environment with external systems or team members. Inspectr Ingress provides a secure, easy-to-use solution for publicly exposing your local service without complicated setup or firewall adjustments.
+When developing locally, you often need to test integrations or share your local environment with external systems or team members. Inspectr Ingress provides a secure, easy-to-use tunnel solution for publicly exposing your local service without complicated setup or firewall adjustments.
 
-- **Secure Public Access** – Create a secure public endpoint linked directly to your local development server.
+- **Secure Public Access** – Create a secure tunnel and public endpoint linked directly to your local development server.
 
 - **Custom Subdomains** – Choose a unique, custom subdomain to clearly identify and easily share your endpoint.
 
-- **Real-time Request Capture** – Monitor requests hitting your local service instantly in both the Inspectr UI and console.
+- **Real-time Request Capture** – Monitor requests hitting your tunneled local service instantly in both the Inspectr UI and console.
 
 - **AI services** – Seamlessly expose local AI, LLM models or MCP servers, enabling easy integration collaboration, or demonstrations from your laptop
 
