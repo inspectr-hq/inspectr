@@ -21,6 +21,8 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
 - **Public Exposure** - Expose or tunnel your local API service, AI model, or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
+- **Rules Engine** - Automatically classify, enrich, and tag requests using powerful condition–action rules.
+- **Trace Grouping** - Visualize end-to-end flows with grouped spans showing each step across request & events.
 - **Mock Backend** - Create a mocked service based on an OpenAPI specification for testing and development.
 - **Guard Authentication** - Protect local services with API key authentication.
 - **Response Overrides** - Simulate API behavior by setting special `inspectr-` headers to control response status codes, delays, content types, and example payloads.
