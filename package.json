@@ -1,6 +1,6 @@
 {
   "name": "@inspectr/inspectr",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Inspectr - Capture and inspect HTTP requests/responses with a built-in Inspectr App.",
   "author": "Tim Haselaars",
   "homepage": "https://inspectr.dev",
