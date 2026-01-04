@@ -500,7 +500,7 @@ curl -X GET http://localhost:8080/api/items \
 | `--version`      | boolean |                  | Returns the version of Inspectr.                                                                                               |
 
 Inspectr can easily be configured using a wide range of command-line flags.
-See the [CLI Configuration Options](https://inspectr.dev/docs/configuration/cli-options/) online documentation for more configuration options.
+See the online documentation [CLI Configuration Options](https://inspectr.dev/docs/configuration/cli-options/) for more configuration options.
 
 ## YAML Configuration File (.inspectr.yaml) Options
 
