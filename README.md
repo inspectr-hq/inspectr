@@ -12,7 +12,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Latest Stable Version"><img src="(https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png" alt="Latest Stable Version"></a>
+  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Latest Stable Version"><img src="https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png" alt="Latest Stable Version"></a>
   &nbsp;
   <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Total Downloads"><img src="https://img.shields.io/github/downloads/inspectr-hq/inspectr/total" alt="Total Downloads"></a>
 </p>
