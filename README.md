@@ -6,9 +6,11 @@
 </p>
 
 <div align="center">
+<span>
   <blockquote>
     <p>Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
   </blockquote>
+</span>
 </div>
 
 <p align="center">
