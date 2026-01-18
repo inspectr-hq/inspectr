@@ -1,18 +1,14 @@
 # Inspectr
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" 
-       style="border: 0; border-collapse: collapse; border-spacing: 0; border-color: white;">
-  <tr>
-    <td style="border: 0; padding: 0 12px 0 0; vertical-align: middle;">
-      <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
-    </td>
-    <td style="border: 0; padding: 0; vertical-align: middle;">
-      <blockquote style="margin: 0;">
-        <p style="margin: 0;">Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
-      </blockquote>
-    </td>
-  </tr>
-</table>
+<p>
+  <span style="display:inline-block; vertical-align:middle; margin-right:12px;">
+    <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
+  </span>
+
+  <span style="display:inline-block; vertical-align:middle; border-left:4px solid #d0d7de; padding-left:12px; line-height:56px;">
+    Inspectr – Simplifying API, MCP Server and Webhook debugging!
+  </span>
+</p>
 
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
