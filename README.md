@@ -2,8 +2,8 @@
 
 <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56" align="left" />
 
-<blockquote>
-  <p>Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
+<blockquote style="margin: 0; height: 56px; border-left: 4px solid #d0d7de; padding: 0 0 0 12px; display: flex; align-items: center;">
+  <span>Inspectr – Simplifying API, MCP Server and Webhook debugging!</span>
 </blockquote>
 
 <br clear="left" />
