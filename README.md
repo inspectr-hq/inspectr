@@ -2,15 +2,13 @@
 
 
 <p align="center">
-  <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
+  <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="68">
 </p>
 
 <div align="center">
-<span>
   <blockquote>
     <p>Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
   </blockquote>
-</span>
 </div>
 
 <p align="center">
