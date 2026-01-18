@@ -6,8 +6,8 @@
       <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
     </td>
     <td style="vertical-align: middle; padding: 0; border: 0;">
-      <blockquote style="margin: 0; padding: 0; border: 0;">
-        <p dir="auto" style="margin: 0; padding: 0;">Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
+      <blockquote style="margin: 0; height: 42px; display: flex; align-items: center; border-left: 4px solid #d0d7de; padding: 0 0 0 12px;">
+        <span>Inspectr – Simplifying API, MCP Server and Webhook debugging!</span>
       </blockquote>
     </td>
   </tr>
