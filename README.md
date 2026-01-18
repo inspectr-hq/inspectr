@@ -1,12 +1,11 @@
 # Inspectr
 
-<p>
+<p style="margin: 0;">
   <span style="display:inline-block; vertical-align:middle; margin-right:12px;">
     <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
   </span>
-
-  <span style="display:inline-block; vertical-align:middle; border-left:4px solid #d0d7de; padding-left:12px; line-height:56px;">
-    Inspectr – Simplifying API, MCP Server and Webhook debugging!
+<span style="display: inline-table; vertical-align: middle; height: 56px; border-left: .25em solid #d0d7de; padding-left: 1em; color: #57606a;">
+    <span style="display: table-cell; vertical-align: middle;">Inspectr – Simplifying API, MCP Server and Webhook debugging!</span>
   </span>
 </p>
 
