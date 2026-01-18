@@ -1,15 +1,21 @@
 # Inspectr
 
-<img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56" align="left" />
 
-<blockquote style="margin: 0; height: 56px; border-left: 4px solid #d0d7de; padding: 0 0 0 12px; display: flex; align-items: center;">
-  <span>Inspectr – Simplifying API, MCP Server and Webhook debugging!</span>
-</blockquote>
+<p align="center">
+  <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="68">
+</p>
 
-<br clear="left" />
+<div align="center">
+  <blockquote>
+    <p>Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
+  </blockquote>
+</div>
 
-<a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
-<a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
+<p align="center">
+  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Latest Stable Version"><img src="https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png" alt="Latest Stable Version"></a>
+  &nbsp;
+  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Total Downloads"><img src="https://img.shields.io/github/downloads/inspectr-hq/inspectr/total" alt="Total Downloads"></a>
+</p>
 
 **Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests, MCP tool calls and webhook events, complete with a built-in tunnel/expose option for sharing local services.
 
