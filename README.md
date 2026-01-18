@@ -1,15 +1,26 @@
 # Inspectr
 
-> Inspectr – Simplifying API and Webhook debugging!
+<table>
+  <tr>
+    <td style="vertical-align: middle; padding-right: 12px;">
+      <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
+    </td>
+    <td style="vertical-align: middle;">
+      <blockquote style="margin: 0;">
+        <p dir="auto" style="margin: 0;">Inspectr – Simplifying API, MCP and Webhook debugging!</p>
+      </blockquote>
+    </td>
+  </tr>
+</table>
 
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
 
-**Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests and webhook events, complete with a built-in tunnel/expose option for sharing local services.
+**Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests, MCP Server calls and webhook events, complete with a built-in tunnel/expose option for sharing local services.
 
 Useful for testing integrations, monitoring incoming requests, reviewing past requests, or troubleshooting payload issues, Inspectr provides the insights you need.
 
-<img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-app.png" alt="Request Inspectr" width="80%">
+<img src="https://inspectr.dev/screens/inspectr-app-v150.png" alt="Request Inspectr" width="80%">
 
 <img src="https://raw.githubusercontent.com/inspectr-hq/inspectr/main/assets/inspectr-console.png" alt="Console Inspectr" width="80%">
 
