@@ -1,7 +1,7 @@
 # Inspectr
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0"
-       style="border: 0; border-collapse: collapse; border-spacing: 0;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" 
+       style="border: 0; border-collapse: collapse; border-spacing: 0; border-color: white;">
   <tr>
     <td style="border: 0; padding: 0 12px 0 0; vertical-align: middle;">
       <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
