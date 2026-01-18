@@ -12,9 +12,9 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
+  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Latest Stable Version"><img src="(https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png" alt="Latest Stable Version"></a>
   &nbsp;
-  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
+  <a href="https://github.com/inspectr-hq/inspectr/releases/latest" title="Total Downloads"><img src="https://img.shields.io/github/downloads/inspectr-hq/inspectr/total" alt="Total Downloads"></a>
 </p>
 
 **Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests, MCP tool calls and webhook events, complete with a built-in tunnel/expose option for sharing local services.
