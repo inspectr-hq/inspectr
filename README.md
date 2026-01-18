@@ -16,7 +16,7 @@
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
 
-**Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests, MCP Server calls and webhook events, complete with a built-in tunnel/expose option for sharing local services.
+**Inspectr** is a lightweight and high-performance API Proxy for reviewing, analyzing, and debugging API requests, MCP tool calls and webhook events, complete with a built-in tunnel/expose option for sharing local services.
 
 Useful for testing integrations, monitoring incoming requests, reviewing past requests, or troubleshooting payload issues, Inspectr provides the insights you need.
 
@@ -32,6 +32,7 @@ Useful for testing integrations, monitoring incoming requests, reviewing past re
 - **Real-time Logging** – Monitor incoming requests as they happen in your terminal and in the Inspectr UI.
 - **History & Replay** – Review past requests with easy filtering and search options, and replay them as needed.
 - **Public Exposure** - Expose or tunnel your local API service, AI model, or MCP server to be accessible for remote systems, with the ability to define a secured, customizable subdomain.
+- **MCP Insights** - View the tools, prompts, resources calls towards your MCP server, made by LLMs. Analyse the input, the returned output and the estimated token usage.
 - **Rules Engine** - Automatically classify, enrich, and tag requests using powerful condition–action rules.
 - **Trace Grouping** - Visualize end-to-end flows with grouped spans showing each step across request & events.
 - **Mock Backend** - Create a mocked service based on an OpenAPI specification for testing and development.
