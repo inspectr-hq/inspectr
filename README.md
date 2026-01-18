@@ -1,13 +1,13 @@
 # Inspectr
 
-<table>
+<table role="presentation" style="border: 0; border-collapse: collapse; border-spacing: 0;">
   <tr>
-    <td style="vertical-align: middle; padding-right: 12px;">
+    <td style="vertical-align: middle; padding: 0 10px 0 0; border: 0;">
       <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
     </td>
-    <td style="vertical-align: middle;">
-      <blockquote style="margin: 0;">
-        <p dir="auto" style="margin: 0;">Inspectr – Simplifying API, MCP and Webhook debugging!</p>
+    <td style="vertical-align: middle; padding: 0; border: 0;">
+      <blockquote style="margin: 0; padding: 0; border: 0;">
+        <p dir="auto" style="margin: 0; padding: 0;">Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
       </blockquote>
     </td>
   </tr>
