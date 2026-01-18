@@ -1,13 +1,17 @@
 # Inspectr
 
-<p style="margin: 0;">
-  <span style="display:inline-block; vertical-align:middle; margin-right:12px;">
-    <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
-  </span>
-<span style="display: inline-table; vertical-align: middle; height: 56px; border-left: .25em solid #d0d7de; padding-left: 1em; color: #57606a;">
-    <span style="display: table-cell; vertical-align: middle;">Inspectr – Simplifying API, MCP Server and Webhook debugging!</span>
-  </span>
+
+<p align="center">
+  <img src="https://inspectr.dev/brand_logo_color.svg" alt="Inspectr logo" width="56">
 </p>
+
+<div align="center">
+  <blockquote>
+    <p>Inspectr – Simplifying API, MCP Server and Webhook debugging!</p>
+  </blockquote>
+</div>
+
+
 
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Latest Stable Version">![github](https://raster.shields.io/github/v/release/inspectr-hq/inspectr.png)</a>
 <a href="https://github.com/inspectr-hq/inspectr/releases/latest" alt="Total Downloads">![github](https://img.shields.io/github/downloads/inspectr-hq/inspectr/total)</a>
