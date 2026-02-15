@@ -1,7 +1,7 @@
 {
   "name": "@inspectr/inspectr",
-  "version": "1.7.0",
-  "description": "Inspectr - Capture and inspect HTTP requests/responses with a built-in Inspectr App.",
+  "version": "1.8.0",
+  "description": "Inspectr - Capture and inspect API requests, MCP server calls and webhook events with a built-in Inspectr App.",
   "author": "Tim Haselaars",
   "homepage": "https://inspectr.dev",
   "bugs": "https://github.com/inspectr-hq/inspectr/issues",
@@ -36,6 +36,7 @@
     "logger",
     "request",
     "response",
+    "mcp",
     "webhooks",
     "SSE"
   ]
