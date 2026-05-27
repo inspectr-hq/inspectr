@@ -25,7 +25,7 @@
     "url": "https://github.com/inspectr-hq/inspectr/releases/download/v{{version}}/inspectr_{{version}}_{{platform}}_{{arch}}.tar.gz"
   },
   "dependencies": {
-    "@inspectr/go-npm": "^0.1.0"
+    "@inspectr/go-npm": "^0.1.1"
   },
   "keywords": [
     "inspectr",
